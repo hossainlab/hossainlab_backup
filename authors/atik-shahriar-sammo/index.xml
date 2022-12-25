@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Atik Shahriar Sammo | Jubayer Hossain</title>
+    <link>https://hossainlab.github.io/authors/atik-shahriar-sammo/</link>
+      <atom:link href="https://hossainlab.github.io/authors/atik-shahriar-sammo/index.xml" rel="self" type="application/rss+xml" />
+    <description>Atik Shahriar Sammo</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Jubayer Hossain</copyright><lastBuildDate>Fri, 23 Apr 2021 23:24:21 +0600</lastBuildDate>
+    <image>
+      <url>https://hossainlab.github.io/img/headers/canyon.jpg</url>
+      <title>Atik Shahriar Sammo</title>
+      <link>https://hossainlab.github.io/authors/atik-shahriar-sammo/</link>
+    </image>
+    
+    <item>
+      <title>Perception and the Impact of Distance Learning on Students from the Science Faculty at Jagannath University, Dhaka during COVID-19: An Exploratory Study</title>
+      <link>https://hossainlab.github.io/publication/impact-of-distance-learning-on-university-students/</link>
+      <pubDate>Fri, 23 Apr 2021 23:24:21 +0600</pubDate>
+      <guid>https://hossainlab.github.io/publication/impact-of-distance-learning-on-university-students/</guid>
+      <description>&lt;h2 id=&#34;survey&#34;&gt;Survey&lt;/h2&gt;
+ &lt;iframe
+       src=&#34;https://forms.gle/NRZKFQZ1YGGrV4Vi9&#34;
+       width=&#34;100%&#34;
+       height=&#34;1000px&#34;
+       style=&#34;border:none;&#34;&gt;
+ &lt;/iframe&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

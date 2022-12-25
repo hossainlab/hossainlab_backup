@@ -1,0 +1,1929 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Biostatistics with R | Jubayer Hossain</title>
+    <link>https://hossainlab.github.io/tags/biostatistics-with-r/</link>
+      <atom:link href="https://hossainlab.github.io/tags/biostatistics-with-r/index.xml" rel="self" type="application/rss+xml" />
+    <description>Biostatistics with R</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Jubayer Hossain</copyright><lastBuildDate>Thu, 28 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://hossainlab.github.io/img/headers/canyon.jpg</url>
+      <title>Biostatistics with R</title>
+      <link>https://hossainlab.github.io/tags/biostatistics-with-r/</link>
+    </image>
+    
+    <item>
+      <title>Interpreting Data Using Descriptive Statistics with R</title>
+      <link>https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/</link>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Exploratory Data Analysis refers to the critical process of performing initial investigations on data so as to discover patterns,to spot anomalies,to test hypothesis and to check assumptions with the help of summary statistics and graphical representations.&lt;/p&gt;
+&lt;p&gt;Exploratory data analysis (EDA) methods are often called Descriptive Statistics due to the fact that they simply describe, or provide estimates based on, the data at hand.&lt;/p&gt;
+&lt;div id=&#34;exploratory-data-analysis&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Exploratory Data Analysis&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Exploratory data analysis can never be the whole story, but nothing else can serve as the foundation stone.” —John Tukey&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;EDA consists of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Organizing and summarizing the raw data,&lt;/li&gt;
+&lt;li&gt;Discovering important features and patterns in the data and any striking deviations from
+those patterns&lt;/li&gt;
+&lt;li&gt;Interpreting our findings in the context of the problem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And can be useful for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Describing the distribution of a single variable (center, spread, shape, outliers)&lt;/li&gt;
+&lt;li&gt;Checking data (for errors or other problems)&lt;/li&gt;
+&lt;li&gt;Checking assumptions to more complex statistical analyses&lt;/li&gt;
+&lt;li&gt;Investigating relationships between variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;features-of-exploratory-data-analysis&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Features of Exploratory Data Analysis&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;In this notebook covers two broad topics:
+&lt;ul&gt;
+&lt;li&gt;Examining Distributions — exploring data one variable at a time.&lt;/li&gt;
+&lt;li&gt;Examining Relationships — exploring data two variables at a time.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;In Exploratory Data Analysis, our exploration of data will always consist of the following two elements:
+&lt;ul&gt;
+&lt;li&gt;Visual displays&lt;/li&gt;
+&lt;li&gt;Numerical measures.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;working-with-data-using-r&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Working with Data using R&lt;/h1&gt;
+&lt;p&gt;In this lesson, we will explore pulse dataset using R. In addition, we will perform exploratory data analysis.&lt;/p&gt;
+&lt;div id=&#34;load-packages&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Load Packages&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Load packages 
+library(tidyverse)
+library(ggplot2)
+library(ggpubr)
+library(gridExtra)
+library(gtsummary)
+library(gt)
+library(datasets)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;load-and-explore-data&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Load and Explore Data&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Read Data 
+data &amp;lt;- read.csv(&amp;quot;data/pulse_data.csv&amp;quot;, stringsAsFactors = TRUE)
+gt(head(data)) &lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;bjbzefuwwr&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;
+&lt;style&gt;html {
+  font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
+}
+
+#bjbzefuwwr .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#bjbzefuwwr .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#bjbzefuwwr .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#bjbzefuwwr .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#bjbzefuwwr .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#bjbzefuwwr .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#bjbzefuwwr .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#bjbzefuwwr .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bjbzefuwwr .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bjbzefuwwr .gt_from_md &gt; :first-child {
+  margin-top: 0;
+}
+
+#bjbzefuwwr .gt_from_md &gt; :last-child {
+  margin-bottom: 0;
+}
+
+#bjbzefuwwr .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#bjbzefuwwr .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bjbzefuwwr .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#bjbzefuwwr .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#bjbzefuwwr .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bjbzefuwwr .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#bjbzefuwwr .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bjbzefuwwr .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#bjbzefuwwr .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bjbzefuwwr .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bjbzefuwwr .gt_left {
+  text-align: left;
+}
+
+#bjbzefuwwr .gt_center {
+  text-align: center;
+}
+
+#bjbzefuwwr .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#bjbzefuwwr .gt_font_normal {
+  font-weight: normal;
+}
+
+#bjbzefuwwr .gt_font_bold {
+  font-weight: bold;
+}
+
+#bjbzefuwwr .gt_font_italic {
+  font-style: italic;
+}
+
+#bjbzefuwwr .gt_super {
+  font-size: 65%;
+}
+
+#bjbzefuwwr .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#bjbzefuwwr .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#bjbzefuwwr .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#bjbzefuwwr .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#bjbzefuwwr .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#bjbzefuwwr .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+&lt;/style&gt;
+&lt;table class=&#34;gt_table&#34;&gt;
+  
+  &lt;thead class=&#34;gt_col_headings&#34;&gt;
+    &lt;tr&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Height&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Weight&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Age&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Gender&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Smokes&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Alcohol&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Exercise&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Ran&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Pulse1&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Pulse2&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;BMI&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;BMICat&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody class=&#34;gt_table_body&#34;&gt;
+    &lt;tr&gt;&lt;td class=&#34;gt_row gt_right&#34;&gt;1.73&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;57&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;18&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Female&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;No&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Yes&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Moderate&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;No&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;86&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;88&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;19.04507&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Underweight&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&#34;gt_row gt_right&#34;&gt;1.79&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;58&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;19&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Female&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;No&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Yes&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Moderate&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Yes&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;82&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;150&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;18.10181&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Underweight&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&#34;gt_row gt_right&#34;&gt;1.67&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;62&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;18&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Female&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;No&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Yes&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;High&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Yes&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;96&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;176&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;22.23099&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Normal&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&#34;gt_row gt_right&#34;&gt;1.95&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;84&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;18&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Male&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;No&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Yes&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;High&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;No&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;71&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;73&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;22.09073&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Normal&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&#34;gt_row gt_right&#34;&gt;1.73&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;64&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;18&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Female&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;No&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Yes&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Low&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;No&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;90&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;88&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;21.38394&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Normal&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&#34;gt_row gt_right&#34;&gt;1.84&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;74&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;22&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Male&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;No&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Yes&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Low&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Yes&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;78&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;141&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;21.85728&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_center&#34;&gt;Normal&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+  
+  
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Check data structure 
+glimpse(data)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Rows: 108
+Columns: 12
+$ Height   &amp;lt;dbl&amp;gt; 1.73, 1.79, 1.67, 1.95, 1.73, 1.84, 1.62, 1.69, 1.64, 1.68, 1…
+$ Weight   &amp;lt;dbl&amp;gt; 57, 58, 62, 84, 64, 74, 57, 55, 56, 60, 75, 58, 68, 59, 72, 1…
+$ Age      &amp;lt;int&amp;gt; 18, 19, 18, 18, 18, 22, 20, 18, 19, 23, 20, 19, 22, 18, 18, 2…
+$ Gender   &amp;lt;fct&amp;gt; Female, Female, Female, Male, Female, Male, Female, Female, F…
+$ Smokes   &amp;lt;fct&amp;gt; No, No, No, No, No, No, No, No, No, No, No, No, Yes, No, No, …
+$ Alcohol  &amp;lt;fct&amp;gt; Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes, No, Ye…
+$ Exercise &amp;lt;fct&amp;gt; Moderate, Moderate, High, High, Low, Low, Moderate, Moderate,…
+$ Ran      &amp;lt;fct&amp;gt; No, Yes, Yes, No, No, Yes, No, No, No, Yes, Yes, No, No, No, …
+$ Pulse1   &amp;lt;dbl&amp;gt; 86, 82, 96, 71, 90, 78, 68, 71, 68, 88, 76, 74, 70, 78, 69, 7…
+$ Pulse2   &amp;lt;dbl&amp;gt; 88, 150, 176, 73, 88, 141, 72, 77, 68, 150, 88, 76, 71, 82, 6…
+$ BMI      &amp;lt;dbl&amp;gt; 19.04507, 18.10181, 22.23099, 22.09073, 21.38394, 21.85728, 2…
+$ BMICat   &amp;lt;fct&amp;gt; Underweight, Underweight, Normal, Normal, Normal, Normal, Nor…&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;one-categorical-variable&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;One Categorical Variable&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Distribution of One Categorical Variable&lt;/li&gt;
+&lt;li&gt;Numerical Summaries
+&lt;ul&gt;
+&lt;li&gt;One-way Frequency Table(Counts)&lt;/li&gt;
+&lt;li&gt;One-way Frequency Table(Percentages)&lt;/li&gt;
+&lt;li&gt;One-way Frequency Table(Combination of Counts and Percentages)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Visual or Graphical Displays
+&lt;ul&gt;
+&lt;li&gt;Bar Chart - Great for categorical data visualization&lt;/li&gt;
+&lt;li&gt;Pie Chart - Use with caution for summarizing categorical data&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;distribution-of-one-categorical-variable&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Distribution of One Categorical Variable&lt;/h2&gt;
+&lt;p&gt;Here is some information that would be interesting to get from these data:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What percentage of the sampled respondents fall into each category?&lt;/li&gt;
+&lt;li&gt;How are respondents divided across the three body image categories? Are they equally divided? If not, do the percentages follow some other kind of pattern?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;numerical-measures&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Numerical Measures&lt;/h2&gt;
+&lt;p&gt;In order to summarize the distribution of a categorical variable, we first create a table of the different values (categories) the variable takes, how many times each value occurs (count) and, more importantly, how often each value occurs (by converting the counts to percentages).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The result is often called a Frequency Distribution or Frequency Table.&lt;/li&gt;
+&lt;li&gt;A Frequency Distribution or Frequency Table is the primary set of numerical measures for one categorical variable.&lt;/li&gt;
+&lt;li&gt;Consists of a table with each category along with the count and percentage for each category.&lt;/li&gt;
+&lt;li&gt;Provides a summary of the distribution for one categorical variable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;one-way-frequency-tablecounts&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;One-way Frequency Table(Counts)&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# One-way frequency table 
+data %&amp;gt;% 
+  group_by(BMICat) %&amp;gt;% 
+  summarise(frequency = n())&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 4 × 2
+  BMICat      frequency
+  &amp;lt;fct&amp;gt;           &amp;lt;int&amp;gt;
+1 Normal             62
+2 Obese               2
+3 Overweight         17
+4 Underweight        27&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;one-way-frequency-tablecounts-percentage&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;One-way Frequency Table(Counts, Percentage)&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;% 
+  group_by(BMICat) %&amp;gt;% 
+  summarise(counts = n()) %&amp;gt;% 
+  mutate(percent = counts/sum(counts) *100) &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 4 × 3
+  BMICat      counts percent
+  &amp;lt;fct&amp;gt;        &amp;lt;int&amp;gt;   &amp;lt;dbl&amp;gt;
+1 Normal          62   57.4 
+2 Obese            2    1.85
+3 Overweight      17   15.7 
+4 Underweight     27   25   &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;visual-or-graphical-displays&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Visual or Graphical Displays&lt;/h2&gt;
+&lt;p&gt;There are two simple graphical displays for visualizing the distribution of one categorical variable:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bar Charts&lt;/li&gt;
+&lt;li&gt;Pie Charts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;bar-charts&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Bar Charts&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;To describe the number of observations in each category of the discrete variable&lt;/li&gt;
+&lt;li&gt;To visualize estimated error for discrete variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Visualize one categorical variable; `fct_infreq()` for sorting the bar 
+data %&amp;gt;% 
+  ggplot(aes(x = BMICat))+
+  geom_bar(fill = &amp;quot;#97B3C6&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# # Sorting Bar Chart by using `fct_infreq()`
+data %&amp;gt;% 
+  ggplot(aes(x = fct_infreq(BMICat)))+
+  geom_bar(fill = &amp;quot;#97B3C6&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Summaries(counts) data for visualizing the distribution 
+df1 &amp;lt;- data %&amp;gt;% 
+  group_by(BMICat) %&amp;gt;% 
+  summarise(counts = n()) %&amp;gt;% 
+  arrange(counts)
+
+df1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 4 × 2
+  BMICat      counts
+  &amp;lt;fct&amp;gt;        &amp;lt;int&amp;gt;
+1 Obese            2
+2 Overweight      17
+3 Underweight     27
+4 Normal          62&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Show the observations number on the top the bar 
+ggplot(df1, aes(x = BMICat, y = counts)) +
+  geom_bar(fill = &amp;quot;#97B3C6&amp;quot;, stat = &amp;quot;identity&amp;quot;) +
+  geom_text(aes(label = counts), vjust = -0.3)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# # Sorting bar by using `reorder()`
+ggplot(df1, aes(x = reorder(BMICat, counts), y = counts)) +
+  geom_bar(fill = &amp;quot;#97B3C6&amp;quot;, stat = &amp;quot;identity&amp;quot;) +
+  geom_text(aes(label = counts), vjust = -0.3)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# # Sorting bar by using `reorder()` and `desc()`
+ggplot(df1, aes(x = reorder(BMICat, desc(counts)), y = counts)) +
+  geom_bar(fill = &amp;quot;#97B3C6&amp;quot;, stat = &amp;quot;identity&amp;quot;) +
+  geom_text(aes(label = counts), vjust = -0.3)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Calculate percentage of each category 
+df2 &amp;lt;- data %&amp;gt;% 
+  group_by(BMICat) %&amp;gt;% 
+  summarise(counts = n()) %&amp;gt;% 
+  arrange(desc(BMICat)) %&amp;gt;% 
+  mutate(prop = round(counts*100/sum(counts), 1))
+df2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 4 × 3
+  BMICat      counts  prop
+  &amp;lt;fct&amp;gt;        &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt;
+1 Underweight     27  25  
+2 Overweight      17  15.7
+3 Obese            2   1.9
+4 Normal          62  57.4&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Sorting the bars using `reorder()`
+ggplot(df2, aes(x = reorder(BMICat, counts), y = prop)) +
+  geom_bar(fill = &amp;quot;#97B3C6&amp;quot;, stat = &amp;quot;identity&amp;quot;) +
+  geom_text(aes(label = prop), vjust = -0.3)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Show the percentage(%) on the of the bar 
+ggplot(df2, aes(x = BMICat, y = prop)) +
+  geom_bar(fill = &amp;quot;#97B3C6&amp;quot;, stat = &amp;quot;identity&amp;quot;) +
+  geom_text(aes(label = prop), vjust = -0.3)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Sorting the bars using `reorder()` and  `desc()`
+ggplot(df2, aes(x = reorder(BMICat, desc(prop)), y = prop)) +
+  geom_bar(fill = &amp;quot;#97B3C6&amp;quot;, stat = &amp;quot;identity&amp;quot;) +
+  geom_text(aes(label = prop), vjust = -0.3)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Customize the plot
+ggplot(df2, aes(x = reorder(BMICat, desc(counts)), y = prop)) +
+  geom_bar(fill = &amp;quot;#97B3C6&amp;quot;, stat = &amp;quot;identity&amp;quot;) +
+  geom_text(aes(label = prop), vjust = -0.3)+
+  labs(title = &amp;quot;Distribution of BMICat&amp;quot;, 
+       x = &amp;quot;BMI Category&amp;quot;, 
+       y = &amp;quot;Proportion&amp;quot;, 
+       caption = &amp;quot;Data Source: https://bolt.mph.ufl.edu/&amp;quot;) &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Create bar chart using ggpubr 
+ggbarplot(df2, x = &amp;quot;BMICat&amp;quot;, y = &amp;quot;counts&amp;quot;, fill = &amp;quot;#97B3C6&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# show counts 
+ggbarplot(df2, x = &amp;quot;BMICat&amp;quot;, y = &amp;quot;counts&amp;quot;, fill = &amp;quot;#97B3C6&amp;quot;, label = TRUE, lab.pos = &amp;quot;out&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# show counts 
+ggbarplot(df2, x = &amp;quot;BMICat&amp;quot;, y = &amp;quot;prop&amp;quot;, fill = &amp;quot;#97B3C6&amp;quot;, label = TRUE, lab.pos = &amp;quot;out&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pie-charts&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Pie charts&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggpie(df2, &amp;quot;prop&amp;quot;, label = &amp;quot;BMICat&amp;quot;, fill = &amp;quot;BMICat&amp;quot;, 
+      color = &amp;quot;white&amp;quot;, 
+      palette = c(&amp;quot;#00AFBB&amp;quot;, &amp;quot;#E7B800&amp;quot;, &amp;quot;#FC4E07&amp;quot;, &amp;quot;#97B3C6&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-17-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Show group names and value as labels
+labs &amp;lt;- paste0(df2$BMICat, &amp;quot; (&amp;quot;, df2$prop, &amp;quot;%)&amp;quot;)
+
+ggpie(df2, &amp;quot;prop&amp;quot;, label =labs, fill = &amp;quot;BMICat&amp;quot;, 
+      color = &amp;quot;white&amp;quot;, 
+      palette = c(&amp;quot;#00AFBB&amp;quot;, &amp;quot;#E7B800&amp;quot;, &amp;quot;#FC4E07&amp;quot;, &amp;quot;#97B3C6&amp;quot;), lab.pos = &amp;quot;in&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-18-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Change the position and font color of labels
+labs &amp;lt;- paste0(df2$BMICat, &amp;quot;(&amp;quot;, df2$prop, &amp;quot;%)&amp;quot;)
+
+ggpie(df2, &amp;quot;prop&amp;quot;, label =labs, 
+      lab.pos = &amp;quot;in&amp;quot;, lab.font = &amp;quot;white&amp;quot;,
+      fill = &amp;quot;BMICat&amp;quot;, 
+      color = &amp;quot;white&amp;quot;, 
+      palette = c(&amp;quot;#00AFBB&amp;quot;, &amp;quot;#E7B800&amp;quot;, &amp;quot;#FC4E07&amp;quot;, &amp;quot;#97B3C6&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-19-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;one-quantitative-variable&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;One Quantitative Variable&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Distribution of One Quantitative Variable&lt;/li&gt;
+&lt;li&gt;Numerical Measures&lt;/li&gt;
+&lt;li&gt;Graphs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;distribution-of-one-quantitative-variable&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Distribution of One Quantitative Variable&lt;/h2&gt;
+&lt;p&gt;In this section, we will explore the data collected from a quantitative variable, and learn how to describe and summarize the important features of its distribution.&lt;/p&gt;
+&lt;p&gt;We will learn how to display the distribution using graphs and discuss a variety of numerical measures.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;numerical-measures-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Numerical Measures&lt;/h2&gt;
+&lt;div id=&#34;measures-of-center&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Measures of Center&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduction&lt;/li&gt;
+&lt;li&gt;Mean&lt;/li&gt;
+&lt;li&gt;Median&lt;/li&gt;
+&lt;li&gt;Comparing the Mean and the Median&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;mean&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Mean&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Average BMI
+data %&amp;gt;% 
+  summarise(avg_bmi = mean(BMI))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;   avg_bmi
+1 22.03186&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;median&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Median&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Median BMI
+data %&amp;gt;% 
+  summarise(median_bmi = median(BMI))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  median_bmi
+1   21.57798&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;graphs&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Graphs&lt;/h2&gt;
+&lt;div id=&#34;histograms&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Histograms&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Shape: Overall appearance of histogram. Can be symmetric, bell-shaped, left skewed, right skewed, etc.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Center: Mean or Median&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Spread: How far our data spreads. Range, Interquartile Range (IQR),standard deviation, variance.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Outliers: Data points that fall far from the bulk of the data&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-histogram5.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-histogram6.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-center4.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;strong&gt;Interpretation:&lt;/strong&gt; The distribution of height is bell
+shaped with a center of about 10.001, a range of 11 inches (5 to 16), and no apparent outliers.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Calculate average height 
+data %&amp;gt;% 
+  summarise(avg_height = mean(Height))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  avg_height
+1   1.732685&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Show the center in histogram 
+gghistogram(data, x = &amp;quot;Height&amp;quot;, add = &amp;quot;mean&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-26-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-center5.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Calculate median height 
+data %&amp;gt;% 
+  summarise(median_height = median(Height))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  median_height
+1          1.73&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Show the center in histogram 
+gghistogram(data, x = &amp;quot;Height&amp;quot;, add = &amp;quot;median&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-29-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Add mean  
+gghistogram(data, x = &amp;quot;Height&amp;quot;, bins = 15, fill = &amp;quot;#97B3C6&amp;quot;, title = &amp;quot;Histogram of Height&amp;quot;, xlab = &amp;quot;Height(m)&amp;quot;, ylab = &amp;quot;Frequency&amp;quot;, add = &amp;quot;mean&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-30-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;strong&gt;Interpretation:&lt;/strong&gt; The distribution of height is roughly bell
+shaped with a center of about 1.7m, a range of 0.55 meters (1.40 to 1.95), and no apparent outliers.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Change the bins size 
+gghistogram(data, x = &amp;quot;Height&amp;quot;, bins = 15, fill = &amp;quot;#58508d&amp;quot; , add = &amp;quot;mean&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-31-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Compare mean and median 
+data %&amp;gt;% 
+  summarise(avg_bmi = mean(BMI), 
+            median_bmi = median(BMI))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;   avg_bmi median_bmi
+1 22.03186   21.57798&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;describing-distributions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Describing Distributions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Features of Distributions of Quantitative Variables&lt;/li&gt;
+&lt;li&gt;Shape (Symmetry/Skewness, Modality)&lt;/li&gt;
+&lt;li&gt;Center&lt;/li&gt;
+&lt;li&gt;Spread&lt;/li&gt;
+&lt;li&gt;Outliers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Load and explore diabetes data 
+diabetes &amp;lt;- read.csv(&amp;quot;data/diabetes.csv&amp;quot;, stringsAsFactors = TRUE)
+gt(head(diabetes))&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;osncjrvket&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;
+&lt;style&gt;html {
+  font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
+}
+
+#osncjrvket .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#osncjrvket .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#osncjrvket .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#osncjrvket .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#osncjrvket .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#osncjrvket .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#osncjrvket .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#osncjrvket .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#osncjrvket .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#osncjrvket .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#osncjrvket .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#osncjrvket .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#osncjrvket .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#osncjrvket .gt_from_md &gt; :first-child {
+  margin-top: 0;
+}
+
+#osncjrvket .gt_from_md &gt; :last-child {
+  margin-bottom: 0;
+}
+
+#osncjrvket .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#osncjrvket .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#osncjrvket .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#osncjrvket .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#osncjrvket .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#osncjrvket .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#osncjrvket .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#osncjrvket .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#osncjrvket .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#osncjrvket .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#osncjrvket .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#osncjrvket .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#osncjrvket .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#osncjrvket .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#osncjrvket .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#osncjrvket .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#osncjrvket .gt_left {
+  text-align: left;
+}
+
+#osncjrvket .gt_center {
+  text-align: center;
+}
+
+#osncjrvket .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#osncjrvket .gt_font_normal {
+  font-weight: normal;
+}
+
+#osncjrvket .gt_font_bold {
+  font-weight: bold;
+}
+
+#osncjrvket .gt_font_italic {
+  font-style: italic;
+}
+
+#osncjrvket .gt_super {
+  font-size: 65%;
+}
+
+#osncjrvket .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#osncjrvket .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#osncjrvket .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#osncjrvket .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#osncjrvket .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#osncjrvket .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+&lt;/style&gt;
+&lt;table class=&#34;gt_table&#34;&gt;
+  
+  &lt;thead class=&#34;gt_col_headings&#34;&gt;
+    &lt;tr&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Pregnancies&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Glucose&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;BloodPressure&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;SkinThickness&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Insulin&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;BMI&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;DiabetesPedigreeFunction&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Age&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Outcome&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody class=&#34;gt_table_body&#34;&gt;
+    &lt;tr&gt;&lt;td class=&#34;gt_row gt_right&#34;&gt;6&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;148&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;72&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;35&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;33.6&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;0.627&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;50&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;85&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;66&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;29&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;26.6&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;0.351&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;31&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&#34;gt_row gt_right&#34;&gt;8&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;183&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;64&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;23.3&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;0.672&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;32&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;89&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;66&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;23&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;94&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;28.1&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;0.167&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;21&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;137&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;40&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;35&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;168&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;43.1&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;2.288&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;33&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&#34;gt_row gt_right&#34;&gt;5&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;116&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;74&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;25.6&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;0.201&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;30&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+  
+  
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;shape&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Shape&lt;/h3&gt;
+&lt;p&gt;When describing the shape of a distribution, we should consider:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Symmetry/skewness of the distribution.&lt;/li&gt;
+&lt;li&gt;Peakedness (modality) — the number of peaks (modes) the distribution has.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;symmetric-distributions&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Symmetric Distributions&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-histogram2.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-histogram3.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-histogram4.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+Note that all three distributions are symmetric, but are different in their modality (peakedness).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The first distribution is unimodal — it has one mode (roughly at 10) around which the observations are concentrated.&lt;/li&gt;
+&lt;li&gt;The second distribution is bimodal — it has two modes (roughly at 10 and 20) around which the observations are concentrated.&lt;/li&gt;
+&lt;li&gt;The third distribution is kind of flat, or uniform. The distribution has no modes, or no value around which the observations are concentrated. Rather, we see that the observations are roughly uniformly distributed among the different values.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Check distribution of age 
+gghistogram(diabetes, x = &amp;quot;BMI&amp;quot;, fill = &amp;quot;#665191&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-37-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;skewed-right-distributions&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Skewed Right Distributions&lt;/h3&gt;
+&lt;p&gt;A distribution is called skewed right if, as in the histogram above, the right tail (larger values) is much longer than the left tail (small values).
+&lt;img src=&#34;img/images-mod1-histogram5.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Check distribution of age 
+gghistogram(diabetes, x = &amp;quot;Age&amp;quot;, fill = &amp;quot;#665191&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-39-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;skewed-left-distributions&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Skewed Left Distributions&lt;/h3&gt;
+&lt;p&gt;A distribution is called skewed left if, as in the histogram above, the left tail (smaller values) is much longer than the right tail (larger values).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-histogram6.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Check distribution of Glucose 
+gghistogram(diabetes, x = &amp;quot;Glucose&amp;quot;, fill = &amp;quot;#665191&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-41-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Comments:
+- Distributions with more than two peaks are generally called multimodal.
+- Bimodal or multimodal distributions can be evidence that two distinct groups are represented.
+- Unimodal, Bimodal, and multimodal distributions may or may not be symmetric.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-bimode_hist.png&#34; width=&#34;100&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;center&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Center&lt;/h3&gt;
+&lt;p&gt;The center of the distribution is often used to represent a typical value.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Check distribution of BMI 
+gghistogram(diabetes, x = &amp;quot;BMI&amp;quot;, fill = &amp;quot;#665191&amp;quot;, add = &amp;quot;mean&amp;quot;, add_density = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-43-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Check distribution of BMI 
+gghistogram(diabetes, x = &amp;quot;BMI&amp;quot;, fill = &amp;quot;#665191&amp;quot;, add = &amp;quot;median&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-44-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;spread&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Spread&lt;/h3&gt;
+&lt;p&gt;One way to measure the spread (also called variability or variation) of the distribution is to use the approximate range covered by the data.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Check distribution of BloodPressure 
+gghistogram(diabetes, x = &amp;quot;BloodPressure&amp;quot;, fill = &amp;quot;#665191&amp;quot;, add = &amp;quot;median&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-45-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outliers&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Outliers&lt;/h3&gt;
+&lt;p&gt;Outliers are observations that fall outside the overall pattern.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-histogram7.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Check distribution of BloodPressure 
+gghistogram(diabetes, x = &amp;quot;BloodPressure&amp;quot;, fill = &amp;quot;#665191&amp;quot;, add = &amp;quot;median&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-47-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;measures-of-spread&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Measures of Spread&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Range&lt;/li&gt;
+&lt;li&gt;Inter-Quartile Range (IQR)&lt;/li&gt;
+&lt;li&gt;Standard Deviation&lt;/li&gt;
+&lt;li&gt;Properties of the Standard Deviation&lt;/li&gt;
+&lt;li&gt;Choosing Numerical Measures&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;range&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Range&lt;/h3&gt;
+&lt;p&gt;The range covered by the data is the most intuitive measure of variability. The range is exactly the distance between the smallest data point (min) and the largest one (Max).&lt;/p&gt;
+&lt;p&gt;Range = Max – min&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;% 
+  summarise(max_height = max(Height), 
+            min_height = min(Height), 
+            range = max_height - min_height)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  max_height min_height range
+1       1.95        1.4  0.55&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;inter-quartile-range-iqr&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Inter-Quartile Range (IQR)&lt;/h3&gt;
+&lt;p&gt;While the range quantifies the variability by looking at the range covered by ALL the data, the Inter-Quartile Range or IQR measures the variability of a distribution by giving us the range covered by the MIDDLE 50% of the data.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;IQR = Q3 – Q1&lt;/li&gt;
+&lt;li&gt;Q3 = 3rd Quartile = 75th Percentile&lt;/li&gt;
+&lt;li&gt;Q1 = 1st Quartile = 25th Percentile&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;% 
+  summarise(
+            min = fivenum(Weight)[1],
+            Q1 = fivenum(Weight)[2],
+            median = fivenum(Weight)[3],
+            Q3 = fivenum(Weight)[4],
+            max = fivenum(Weight)[5], 
+            IQR = Q3 - Q1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  min   Q1 median Q3 max  IQR
+1  41 56.5     63 75 110 18.5&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;standard-deviation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Standard Deviation&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;% 
+  summarise(avg_height = mean(Height), 
+            std = sd(Height)) &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  avg_height       std
+1   1.732685 0.1012133&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;variance&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Variance&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;% 
+  summarise(avg_height = mean(Height), 
+            var_height = var(Height)) &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  avg_height var_height
+1   1.732685 0.01024412&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;measures-of-position&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Measures of Position&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Percentiles&lt;/li&gt;
+&lt;li&gt;Five-Number Summary&lt;/li&gt;
+&lt;li&gt;Standardized Scores (Z-Scores)&lt;/li&gt;
+&lt;li&gt;Measures of Position&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;percentiles&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Percentiles&lt;/h3&gt;
+&lt;p&gt;In general the P-th percentile can be interpreted as a location in the data for which approximately P% of the other values in the distribution fall below the P-th percentile and (100 –P)% fall above the P-th percentile.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;five-number-summary&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Five Number Summary&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;% 
+  summarise(
+            min = fivenum(Weight)[1],
+            Q1 = fivenum(Weight)[2],
+            median = fivenum(Weight)[3],
+            Q3 = fivenum(Weight)[4],
+            max = fivenum(Weight)[5])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  min   Q1 median Q3 max
+1  41 56.5     63 75 110&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;standardized-scores-z-scores&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Standardized Scores (Z-Scores)&lt;/h3&gt;
+&lt;p&gt;Z = (x – mean)/standard deviation&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;% 
+  mutate(zscore = (BMI - mean(BMI) / sd(BMI))) %&amp;gt;% 
+  head() &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  Height Weight Age Gender Smokes Alcohol Exercise Ran Pulse1 Pulse2      BMI
+1   1.73     57  18 Female     No     Yes Moderate  No     86     88 19.04507
+2   1.79     58  19 Female     No     Yes Moderate Yes     82    150 18.10181
+3   1.67     62  18 Female     No     Yes     High Yes     96    176 22.23099
+4   1.95     84  18   Male     No     Yes     High  No     71     73 22.09073
+5   1.73     64  18 Female     No     Yes      Low  No     90     88 21.38394
+6   1.84     74  22   Male     No     Yes      Low Yes     78    141 21.85728
+       BMICat   zscore
+1 Underweight 12.37439
+2 Underweight 11.43112
+3      Normal 15.56030
+4      Normal 15.42004
+5      Normal 14.71326
+6      Normal 15.18659&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;measures-of-position-1&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Measures of Position&lt;/h3&gt;
+&lt;p&gt;Measures of position also allow us to compare values from different distributions. For example, we can present the percentiles or z-scores of an individual’s height and weight. These two measures together would provide a better picture of how the individual fits in the overall population than either would alone.&lt;/p&gt;
+&lt;p&gt;Although measures of position are not stressed in this course as much as measures of center and spread, we have seen and will see many measures of position used in various aspects of examining the distribution of one variable and it is good to recognize them as measures of position when they appear.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outliers-detection&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Outliers Detection&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Using the IQR to Detect Outliers&lt;/li&gt;
+&lt;li&gt;The 1.5(IQR) Criterion for Outliers&lt;/li&gt;
+&lt;li&gt;The 3(IQR) Criterion for Outliers&lt;/li&gt;
+&lt;li&gt;Understanding Outliers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;using-the-iqr-to-detect-outliers&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Using the IQR to Detect Outliers&lt;/h3&gt;
+&lt;p&gt;So far we have quantified the idea of center, and we are in the middle of the discussion about measuring spread, but we haven’t really talked about a method or rule that will help us classify extreme observations as outliers. The IQR is commonly used as the basis for a rule of thumb for identifying outliers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-1.5iqr-criterion-for-outliers&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The 1.5(IQR) Criterion for Outliers&lt;/h3&gt;
+&lt;p&gt;An observation is considered a suspected outlier or potential outlier if it is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;below Q1 – 1.5(IQR) or&lt;/li&gt;
+&lt;li&gt;above Q3 + 1.5(IQR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The following picture (not to scale) illustrates this rule:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-spread10.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-spread11.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-3iqr-criterion-for-outliers&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The 3(IQR) Criterion for Outliers&lt;/h3&gt;
+&lt;p&gt;An observation is considered an EXTREME outlier if it is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;below Q1 – 3(IQR) or&lt;/li&gt;
+&lt;li&gt;above Q3 + 3(IQR)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-spread11.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ds &amp;lt;- read.csv(&amp;quot;data/500_Person_Gender_Height_Weight_Index.csv&amp;quot;)
+head(ds)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  Gender Height Weight Index
+1   Male    174     96     4
+2   Male    189     87     2
+3 Female    185    110     4
+4 Female    195    104     3
+5   Male    149     61     3
+6   Male    189    104     3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;gghistogram(ds, x = &amp;quot;Height&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-58-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;gghistogram(ds, x = &amp;quot;Weight&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-59-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;boxplots&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Boxplots&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The Five Number Summary&lt;/li&gt;
+&lt;li&gt;The Boxplot&lt;/li&gt;
+&lt;li&gt;Side-By-Side (Comparative) Boxplots&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;the-five-number-summary&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The Five Number Summary&lt;/h3&gt;
+&lt;p&gt;So far, in our discussion about measures of spread, some key players were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the extremes (min and Max), which provide the range covered by all the data; and&lt;/li&gt;
+&lt;li&gt;the quartiles (Q1, M and Q3), which together provide the IQR, the range covered by the middle 50% of the data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Recall that the combination of all five numbers (min, Q1, M, Q3, Max) is called the five number summary, and provides a quick numerical description of both the center and spread of a distribution.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ds %&amp;gt;% 
+  summarise(
+            min = fivenum(Height)[1],
+            Q1 = fivenum(Height)[2],
+            median = fivenum(Height)[3],
+            Q3 = fivenum(Height)[4],
+            max = fivenum(Height)[5])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  min  Q1 median  Q3 max
+1 140 156  170.5 184 199&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-boxplot&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The Boxplot&lt;/h3&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;The central box spans from Q1 to Q3. In our example, the box spans from 32 to 41.5. Note that the width of the box has no meaning.
+&lt;img src=&#34;img/images-mod1-boxplot1.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;A line in the box marks the median M, which in our case is 35.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-boxplot2.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34; style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Lines extend from the edges of the box to the smallest and largest observations that were not classified as suspected outliers (using the 1.5xIQR criterion). In our example, we have no low outliers, so the bottom line goes down to the smallest observation, which is 21. Since we have three high outliers (61,74, and 80), the top line extends only up to 49, which is the largest observation that has not been flagged as an outlier.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-boxplot3.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+4. outliers are marked with asterisks (*).
+&lt;img src=&#34;img/images-mod1-boxplot4.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+To summarize: the following information is visually depicted in the boxplot:&lt;/p&gt;
+&lt;p&gt;the five number summary (blue)
+the range and IQR (red)
+outliers (green)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-boxplot6.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;side-by-side-comparative-boxplots&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Side-By-Side (Comparative) Boxplots&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-boxplot8.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggboxplot(ds, y = &amp;quot;Height&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-67-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggboxplot(ds, y = &amp;quot;Weight&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-68-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggboxplot(ds, x = &amp;quot;Gender&amp;quot;, y = &amp;quot;Height&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-69-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-normal-shape&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The “Normal” Shape&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The Standard Deviation Rule&lt;/li&gt;
+&lt;li&gt;Visual Methods of Assessing Normality&lt;/li&gt;
+&lt;li&gt;Standardized Scores (Z-Scores)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;the-standard-deviation-rule&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The Standard Deviation Rule&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-sdgraph1.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-standard-deviation-rule-1&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;The Standard Deviation Rule:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Approximately 68% of the observations fall within 1 standard deviation of the mean.&lt;/li&gt;
+&lt;li&gt;Approximately 95% of the observations fall within 2 standard deviations of the mean.&lt;/li&gt;
+&lt;li&gt;Approximately 99.7% (or virtually all) of the observations fall within 3 standard deviations of the mean.
+&lt;img src=&#34;img/images-mod1-sdgraph2.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-sdgraph3.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;img/images-mod1-sdgraph4.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-sdgraph5.gif&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/stdrulefull.jpg&#34; width=&#34;73&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;visual-methods-of-assessing-normality&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Visual Methods of Assessing Normality&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-Hist-Norm1.png&#34; width=&#34;79&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/images-mod1-360px-Normal-normal-qq.svg_.png&#34; width=&#34;72&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/Graph1_Symmetric.png&#34; width=&#34;257&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;img/Graph1_SkewedRight.png&#34; width=&#34;257&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;standardized-scores-z-scores-1&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Standardized Scores (Z-Scores)&lt;/h3&gt;
+&lt;p&gt;Z = (x - mean) / standard deviation&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ds %&amp;gt;% 
+  mutate(zscore = (Height - mean(Height)) / sd(Height)) %&amp;gt;% 
+  head() &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  Gender Height Weight Index     zscore
+1   Male    174     96     4  0.2476907
+2   Male    189     87     2  1.1637067
+3 Female    185    110     4  0.9194357
+4 Female    195    104     3  1.5301130
+5   Male    149     61     3 -1.2790025
+6   Male    189    104     3  1.1637067&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;role-type-classification&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Role Type Classification&lt;/h1&gt;
+&lt;p&gt;While it is fundamentally important to know how to describe the distribution of a single variable, most studies pose research questions that involve exploring the relationship between two (or more) variables. These research questions are investigated using a sample from the population of interest.&lt;/p&gt;
+&lt;div id=&#34;example-research-questions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Example Research Question(s)&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Is there a relationship between gender and test scores on a particular standardized test? Other ways of phrasing the same research question:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Is performance on the test related to gender?&lt;/li&gt;
+&lt;li&gt;Is there a gender effect on test scores?&lt;/li&gt;
+&lt;li&gt;Are there differences in test scores between males and females?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34; style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Are the smoking habits of a person (yes, no) related to the person’s gender(male, female)?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;role-of-a-variable-in-a-study&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Role of a Variable in a Study&lt;/h2&gt;
+&lt;p&gt;In most studies involving two variables, each of the variables has a role. We distinguish between:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Response variable — the outcome of the study; and&lt;/li&gt;
+&lt;li&gt;Eexplanatory variable — the variable that claims to explain, predict or affect the response.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As we mentioned earlier the variable we wish to predict is commonly called the dependent variable, the outcome variable, or the response variable. Any variable we are using to predict (or explain differences) in the outcome is commonly called an explanatory variable, an independent variable, a predictor variable, or a covariate.&lt;/p&gt;
+&lt;p&gt;Typically the explanatory variable is denoted by X, and the response variable by Y.&lt;/p&gt;
+&lt;div id=&#34;example&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example&lt;/h3&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Research Question: Is there a relationship between gender and test scores on a particular standardized test? Other ways of phrasing the same research question:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Is performance on the test related to gender?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Is there a gender effect on test scores?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Are there differences in test scores between males and females?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Gender is the explanatory variable&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Test score is the response variable&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;role-type-classification-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Role-Type Classification&lt;/h2&gt;
+&lt;p&gt;If we further classify each of the two relevant variables according to type (categorical or quantitative), we get the following 4 possibilities for “role-type classification”&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Categorical explanatory and quantitative response (Case CQ)&lt;/li&gt;
+&lt;li&gt;Categorical explanatory and categorical response (Case CC)&lt;/li&gt;
+&lt;li&gt;Quantitative explanatory and quantitative response (Case QQ)&lt;/li&gt;
+&lt;li&gt;Quantitative explanatory and categorical response (Case QC)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:unnamed-chunk-81&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;img/images-mod2-relationships-overview1.gif&#34; alt=&#34;Figure Caption&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 1: Figure Caption
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example-1&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Example&lt;/h3&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Research Question: Is there a relationship between gender and test scores on a particular standardized test? Other ways of phrasing the same research question:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Is performance on the test related to gender?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Is there a gender effect on test scores?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Are there differences in test scores between males and females?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Gender is the explanatory variable&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Test score is the response variable&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Therefore this is an example of case C → Q.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;case-c-q-categorical-explanatory-and-quantitative-response&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Case C-Q Categorical Explanatory and Quantitative Response&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;% 
+  select(Gender, BMI) %&amp;gt;% 
+  group_by(Gender) %&amp;gt;% 
+  summarise(Avg_BMI = mean(BMI))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 2 × 2
+  Gender Avg_BMI
+  &amp;lt;fct&amp;gt;    &amp;lt;dbl&amp;gt;
+1 Female    20.8
+2 Male      23.1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;% 
+  group_by(Gender) %&amp;gt;% 
+  summarise(n = n(),
+            min = fivenum(BMI)[1],
+            Q1 = fivenum(BMI)[2],
+            median = fivenum(BMI)[3],
+            Q3 = fivenum(BMI)[4],
+            max = fivenum(BMI)[5])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 2 × 7
+  Gender     n   min    Q1 median    Q3   max
+  &amp;lt;fct&amp;gt;  &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;  &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+1 Female    50  16.6  19.0   20.6  22.2  29.0
+2 Male      58  16.8  20.2   22.9  25.1  32.1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggboxplot(data, x = &amp;quot;Gender&amp;quot;, y = &amp;quot;BMI&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-84-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;case-c-c---two-categorical-variables&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Case C-C - Two Categorical Variables&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# https://www.statology.org/dplyr-crosstab/
+df3 &amp;lt;- data %&amp;gt;% 
+  group_by(Gender, Ran) %&amp;gt;% 
+  tally() %&amp;gt;% 
+  spread(Ran, n)
+df3 &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 2 × 3
+# Groups:   Gender [2]
+  Gender    No   Yes
+  &amp;lt;fct&amp;gt;  &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;
+1 Female    28    22
+2 Male      35    23&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# https://www.statology.org/dplyr-crosstab/
+df3 &amp;lt;- data %&amp;gt;% 
+  group_by(Gender, BMICat) %&amp;gt;% 
+  tally() %&amp;gt;% 
+  spread(BMICat, n)
+
+df3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;# A tibble: 2 × 5
+# Groups:   Gender [2]
+  Gender Normal Obese Overweight Underweight
+  &amp;lt;fct&amp;gt;   &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;      &amp;lt;int&amp;gt;       &amp;lt;int&amp;gt;
+1 Female     29    NA          3          18
+2 Male       33     2         14           9&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;case-q-q---two-quantitative-variables&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Case Q-Q - Two Quantitative Variables&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data %&amp;gt;% 
+  select(Height, Weight) %&amp;gt;% 
+  cor()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;          Height    Weight
+Height 1.0000000 0.7413042
+Weight 0.7413042 1.0000000&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;scatterplots&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Scatterplots&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Creating Scatterplots&lt;/li&gt;
+&lt;li&gt;Interpreting Scatterplots&lt;/li&gt;
+&lt;li&gt;Direction&lt;/li&gt;
+&lt;li&gt;Form&lt;/li&gt;
+&lt;li&gt;Strength&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;interpreting-scatterplots&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Interpreting Scatterplots&lt;/h3&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:unnamed-chunk-88&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;img/images-mod2-scatterplot5.gif&#34; alt=&#34;Figure Caption&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 2: Figure Caption
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;direction&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Direction&lt;/h3&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:unnamed-chunk-89&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;img/directionscatterplots.gif&#34; alt=&#34;Figure Caption&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 3: Figure Caption
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;A positive (or increasing) relationship means that an increase in one of the variables is associated with an increase in the other.&lt;/p&gt;
+&lt;p&gt;A negative (or decreasing) relationship means that an increase in one of the variables is associated with a decrease in the other.&lt;/p&gt;
+&lt;p&gt;Not all relationships can be classified as either positive or negative.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;form&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Form&lt;/h3&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:unnamed-chunk-90&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;img/images-mod2-scatterplot9.gif&#34; alt=&#34;Figure Caption&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 4: Figure Caption
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The form of the relationship is its general shape. When identifying the form, we try to find the simplest way to describe the shape of the scatterplot. There are many possible forms. Here are a couple that are quite common:
+Relationships with a linear form are most simply described as points scattered about a line:&lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:unnamed-chunk-91&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;img/images-mod2-scatterplot10.gif&#34; alt=&#34;Figure Caption&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 5: Figure Caption
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;A scatterplot in which the points are slightly above or below a line which has been drawn through the points. Overall, the points create a shape that appears to be a fat line. In this example, the points create a negative relationship.Relationships with a non-linear (sometimes called curvilinear) form are most simply described as points dispersed around the same curved line:&lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:unnamed-chunk-92&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;img/images-mod2-scatterplot11.gif&#34; alt=&#34;Figure Caption&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 6: Figure Caption
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;There are many other possible forms for the relationship between two quantitative variables, but linear and curvilinear forms are quite common and easy to identify. Another form-related pattern that we should be aware of is clusters in the data:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;strength&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Strength&lt;/h3&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:unnamed-chunk-93&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;img/strengthscatterplot.gif&#34; alt=&#34;Figure Caption&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 7: Figure Caption
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The strength of the relationship is determined by how closely the data follow the form of the relationship. Let’s look, for example, at the following two scatterplots displaying positive, linear relationships:&lt;/p&gt;
+&lt;p&gt;The strength of the relationship is determined by how closely the data points follow the form. We can see that in the left scatterplot the data points follow the linear pattern quite closely. This is an example of a strong relationship. In the right scatterplot, the points also follow the linear pattern, but much less closely, and therefore we can say that the relationship is weaker. In general, though, assessing the strength of a relationship just by looking at the scatterplot is quite problematic, and we need a numerical measure to help us with that. We will discuss that later in this section.&lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:unnamed-chunk-94&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;img/images-mod2-scatterplot14.gif&#34; alt=&#34;Figure Caption&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 8: Figure Caption
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Data points that deviate from the pattern of the relationship are called outliers. We will see several examples of outliers during this section. Two outliers are illustrated in the scatterplot below:&lt;/p&gt;
+&lt;div class=&#34;figure&#34; style=&#34;text-align: center&#34;&gt;&lt;span style=&#34;display:block;&#34; id=&#34;fig:unnamed-chunk-95&#34;&gt;&lt;/span&gt;
+&lt;img src=&#34;img/images-mod2-scatterplot11.gif&#34; alt=&#34;Figure Caption&#34;  /&gt;
+&lt;p class=&#34;caption&#34;&gt;
+Figure 9: Figure Caption
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggscatter(data, x = &amp;quot;Height&amp;quot;, y = &amp;quot;Weight&amp;quot;, shape = 21, size = 3,  add = &amp;quot;reg.line&amp;quot;, fill = &amp;quot;lightgray&amp;quot;,  color = &amp;quot;Gender&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-96-1.png&#34; width=&#34;480&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

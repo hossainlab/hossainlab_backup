@@ -1,0 +1,2922 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.5.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Jubayer Hossain">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="IntroductionExploratory Data Analysis refers to the critical process of performing initial investigations on data so as to discover patterns,to spot anomalies,to test hypothesis and to check assumptions with the help of summary statistics and graphical representations.
+Exploratory data analysis (EDA) methods are often called Descriptive Statistics due to the fact that they simply describe, or provide estimates based on, the data at hand.
+Exploratory Data Analysis“Exploratory data analysis can never be the whole story, but nothing else can serve as the foundation stone.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#0072B2">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/darcula.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/darcula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:300,400,500%7CIBM+Plex+Sans:300,400,500%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.a72388dfabd81eb134f18afd5be0ccc8.css">
+
+  
+    
+    
+    
+    
+      
+    
+    
+    
+    <link rel="stylesheet" href="/css/academic.cec0707b3854b847b32f81a880c11d1e.css">
+  
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/">
+
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@Jhossain_28">
+  <meta property="twitter:creator" content="@Jhossain_28">
+  
+  <meta property="og:site_name" content="Jubayer Hossain">
+  <meta property="og:url" content="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/">
+  <meta property="og:title" content="Interpreting Data Using Descriptive Statistics with R | Jubayer Hossain">
+  <meta property="og:description" content="IntroductionExploratory Data Analysis refers to the critical process of performing initial investigations on data so as to discover patterns,to spot anomalies,to test hypothesis and to check assumptions with the help of summary statistics and graphical representations.
+Exploratory data analysis (EDA) methods are often called Descriptive Statistics due to the fact that they simply describe, or provide estimates based on, the data at hand.
+Exploratory Data Analysis“Exploratory data analysis can never be the whole story, but nothing else can serve as the foundation stone."><meta property="og:image" content="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/featured.jpg">
+  <meta property="twitter:image" content="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/featured.jpg"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2022-07-28T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2022-07-28T02:58:53&#43;06:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/"
+  },
+  "headline": "Interpreting Data Using Descriptive Statistics with R",
+  
+  "image": [
+    "https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/featured.jpg"
+  ],
+  
+  "datePublished": "2022-07-28T00:00:00Z",
+  "dateModified": "2022-07-28T02:58:53+06:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Jubayer Hossain"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "CHIRAL Bangladesh",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://hossainlab.github.io/img/logo.png"
+    }
+  },
+  "description": "Introduction\rExploratory Data Analysis refers to the critical process of performing initial investigations on data so as to discover patterns,to spot anomalies,to test hypothesis and to check assumptions with the help of summary statistics and graphical representations.\nExploratory data analysis (EDA) methods are often called Descriptive Statistics due to the fact that they simply describe, or provide estimates based on, the data at hand.\nExploratory Data Analysis\r\r“Exploratory data analysis can never be the whole story, but nothing else can serve as the foundation stone."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Interpreting Data Using Descriptive Statistics with R | Jubayer Hossain</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="Jubayer Hossain"></a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/aboutme"><span>About me</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/publication"><span>Publication</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/talk"><span>Talks</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/training"><span>Training</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/consulting"><span>Consulting</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/services"><span>Services</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>Interpreting Data Using Descriptive Statistics with R</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jul 28, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    28 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categories/data-analysis/">Data Analysis</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 513px;">
+  <div style="position: relative">
+    <img src="/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/featured_hu99ea61755552bac2aa4265a259c82512_291312_720x0_resize_q100_lanczos.jpg" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+
+
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>Exploratory Data Analysis refers to the critical process of performing initial investigations on data so as to discover patterns,to spot anomalies,to test hypothesis and to check assumptions with the help of summary statistics and graphical representations.</p>
+<p>Exploratory data analysis (EDA) methods are often called Descriptive Statistics due to the fact that they simply describe, or provide estimates based on, the data at hand.</p>
+<div id="exploratory-data-analysis" class="section level2">
+<h2>Exploratory Data Analysis</h2>
+<blockquote>
+<p>“Exploratory data analysis can never be the whole story, but nothing else can serve as the foundation stone.” —John Tukey</p>
+</blockquote>
+<p>EDA consists of:</p>
+<ul>
+<li>Organizing and summarizing the raw data,</li>
+<li>Discovering important features and patterns in the data and any striking deviations from
+those patterns</li>
+<li>Interpreting our findings in the context of the problem</li>
+</ul>
+<p>And can be useful for:</p>
+<ul>
+<li>Describing the distribution of a single variable (center, spread, shape, outliers)</li>
+<li>Checking data (for errors or other problems)</li>
+<li>Checking assumptions to more complex statistical analyses</li>
+<li>Investigating relationships between variables</li>
+</ul>
+</div>
+<div id="features-of-exploratory-data-analysis" class="section level2">
+<h2>Features of Exploratory Data Analysis</h2>
+<ul>
+<li>In this notebook covers two broad topics:
+<ul>
+<li>Examining Distributions — exploring data one variable at a time.</li>
+<li>Examining Relationships — exploring data two variables at a time.</li>
+</ul></li>
+<li>In Exploratory Data Analysis, our exploration of data will always consist of the following two elements:
+<ul>
+<li>Visual displays</li>
+<li>Numerical measures.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="working-with-data-using-r" class="section level1">
+<h1>Working with Data using R</h1>
+<p>In this lesson, we will explore pulse dataset using R. In addition, we will perform exploratory data analysis.</p>
+<div id="load-packages" class="section level2">
+<h2>Load Packages</h2>
+<pre class="r"><code># Load packages 
+library(tidyverse)
+library(ggplot2)
+library(ggpubr)
+library(gridExtra)
+library(gtsummary)
+library(gt)
+library(datasets)</code></pre>
+</div>
+<div id="load-and-explore-data" class="section level2">
+<h2>Load and Explore Data</h2>
+<pre class="r"><code># Read Data 
+data &lt;- read.csv(&quot;data/pulse_data.csv&quot;, stringsAsFactors = TRUE)
+gt(head(data)) </code></pre>
+<div id="bjbzefuwwr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#bjbzefuwwr .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#bjbzefuwwr .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#bjbzefuwwr .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#bjbzefuwwr .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#bjbzefuwwr .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#bjbzefuwwr .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#bjbzefuwwr .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#bjbzefuwwr .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bjbzefuwwr .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bjbzefuwwr .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#bjbzefuwwr .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#bjbzefuwwr .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#bjbzefuwwr .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bjbzefuwwr .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#bjbzefuwwr .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#bjbzefuwwr .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bjbzefuwwr .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#bjbzefuwwr .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bjbzefuwwr .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#bjbzefuwwr .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bjbzefuwwr .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bjbzefuwwr .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bjbzefuwwr .gt_left {
+  text-align: left;
+}
+
+#bjbzefuwwr .gt_center {
+  text-align: center;
+}
+
+#bjbzefuwwr .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#bjbzefuwwr .gt_font_normal {
+  font-weight: normal;
+}
+
+#bjbzefuwwr .gt_font_bold {
+  font-weight: bold;
+}
+
+#bjbzefuwwr .gt_font_italic {
+  font-style: italic;
+}
+
+#bjbzefuwwr .gt_super {
+  font-size: 65%;
+}
+
+#bjbzefuwwr .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#bjbzefuwwr .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#bjbzefuwwr .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#bjbzefuwwr .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#bjbzefuwwr .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#bjbzefuwwr .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Height</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Weight</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Gender</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Smokes</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Alcohol</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Exercise</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Ran</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Pulse1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Pulse2</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">BMI</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">BMICat</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_right">1.73</td>
+<td class="gt_row gt_right">57</td>
+<td class="gt_row gt_right">18</td>
+<td class="gt_row gt_center">Female</td>
+<td class="gt_row gt_center">No</td>
+<td class="gt_row gt_center">Yes</td>
+<td class="gt_row gt_center">Moderate</td>
+<td class="gt_row gt_center">No</td>
+<td class="gt_row gt_right">86</td>
+<td class="gt_row gt_right">88</td>
+<td class="gt_row gt_right">19.04507</td>
+<td class="gt_row gt_center">Underweight</td></tr>
+    <tr><td class="gt_row gt_right">1.79</td>
+<td class="gt_row gt_right">58</td>
+<td class="gt_row gt_right">19</td>
+<td class="gt_row gt_center">Female</td>
+<td class="gt_row gt_center">No</td>
+<td class="gt_row gt_center">Yes</td>
+<td class="gt_row gt_center">Moderate</td>
+<td class="gt_row gt_center">Yes</td>
+<td class="gt_row gt_right">82</td>
+<td class="gt_row gt_right">150</td>
+<td class="gt_row gt_right">18.10181</td>
+<td class="gt_row gt_center">Underweight</td></tr>
+    <tr><td class="gt_row gt_right">1.67</td>
+<td class="gt_row gt_right">62</td>
+<td class="gt_row gt_right">18</td>
+<td class="gt_row gt_center">Female</td>
+<td class="gt_row gt_center">No</td>
+<td class="gt_row gt_center">Yes</td>
+<td class="gt_row gt_center">High</td>
+<td class="gt_row gt_center">Yes</td>
+<td class="gt_row gt_right">96</td>
+<td class="gt_row gt_right">176</td>
+<td class="gt_row gt_right">22.23099</td>
+<td class="gt_row gt_center">Normal</td></tr>
+    <tr><td class="gt_row gt_right">1.95</td>
+<td class="gt_row gt_right">84</td>
+<td class="gt_row gt_right">18</td>
+<td class="gt_row gt_center">Male</td>
+<td class="gt_row gt_center">No</td>
+<td class="gt_row gt_center">Yes</td>
+<td class="gt_row gt_center">High</td>
+<td class="gt_row gt_center">No</td>
+<td class="gt_row gt_right">71</td>
+<td class="gt_row gt_right">73</td>
+<td class="gt_row gt_right">22.09073</td>
+<td class="gt_row gt_center">Normal</td></tr>
+    <tr><td class="gt_row gt_right">1.73</td>
+<td class="gt_row gt_right">64</td>
+<td class="gt_row gt_right">18</td>
+<td class="gt_row gt_center">Female</td>
+<td class="gt_row gt_center">No</td>
+<td class="gt_row gt_center">Yes</td>
+<td class="gt_row gt_center">Low</td>
+<td class="gt_row gt_center">No</td>
+<td class="gt_row gt_right">90</td>
+<td class="gt_row gt_right">88</td>
+<td class="gt_row gt_right">21.38394</td>
+<td class="gt_row gt_center">Normal</td></tr>
+    <tr><td class="gt_row gt_right">1.84</td>
+<td class="gt_row gt_right">74</td>
+<td class="gt_row gt_right">22</td>
+<td class="gt_row gt_center">Male</td>
+<td class="gt_row gt_center">No</td>
+<td class="gt_row gt_center">Yes</td>
+<td class="gt_row gt_center">Low</td>
+<td class="gt_row gt_center">Yes</td>
+<td class="gt_row gt_right">78</td>
+<td class="gt_row gt_right">141</td>
+<td class="gt_row gt_right">21.85728</td>
+<td class="gt_row gt_center">Normal</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+<pre class="r"><code># Check data structure 
+glimpse(data)</code></pre>
+<pre><code>Rows: 108
+Columns: 12
+$ Height   &lt;dbl&gt; 1.73, 1.79, 1.67, 1.95, 1.73, 1.84, 1.62, 1.69, 1.64, 1.68, 1…
+$ Weight   &lt;dbl&gt; 57, 58, 62, 84, 64, 74, 57, 55, 56, 60, 75, 58, 68, 59, 72, 1…
+$ Age      &lt;int&gt; 18, 19, 18, 18, 18, 22, 20, 18, 19, 23, 20, 19, 22, 18, 18, 2…
+$ Gender   &lt;fct&gt; Female, Female, Female, Male, Female, Male, Female, Female, F…
+$ Smokes   &lt;fct&gt; No, No, No, No, No, No, No, No, No, No, No, No, Yes, No, No, …
+$ Alcohol  &lt;fct&gt; Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes, Yes, No, Ye…
+$ Exercise &lt;fct&gt; Moderate, Moderate, High, High, Low, Low, Moderate, Moderate,…
+$ Ran      &lt;fct&gt; No, Yes, Yes, No, No, Yes, No, No, No, Yes, Yes, No, No, No, …
+$ Pulse1   &lt;dbl&gt; 86, 82, 96, 71, 90, 78, 68, 71, 68, 88, 76, 74, 70, 78, 69, 7…
+$ Pulse2   &lt;dbl&gt; 88, 150, 176, 73, 88, 141, 72, 77, 68, 150, 88, 76, 71, 82, 6…
+$ BMI      &lt;dbl&gt; 19.04507, 18.10181, 22.23099, 22.09073, 21.38394, 21.85728, 2…
+$ BMICat   &lt;fct&gt; Underweight, Underweight, Normal, Normal, Normal, Normal, Nor…</code></pre>
+</div>
+</div>
+<div id="one-categorical-variable" class="section level1">
+<h1>One Categorical Variable</h1>
+<ul>
+<li>Distribution of One Categorical Variable</li>
+<li>Numerical Summaries
+<ul>
+<li>One-way Frequency Table(Counts)</li>
+<li>One-way Frequency Table(Percentages)</li>
+<li>One-way Frequency Table(Combination of Counts and Percentages)</li>
+</ul></li>
+<li>Visual or Graphical Displays
+<ul>
+<li>Bar Chart - Great for categorical data visualization</li>
+<li>Pie Chart - Use with caution for summarizing categorical data</li>
+</ul></li>
+</ul>
+<div id="distribution-of-one-categorical-variable" class="section level2">
+<h2>Distribution of One Categorical Variable</h2>
+<p>Here is some information that would be interesting to get from these data:</p>
+<ul>
+<li>What percentage of the sampled respondents fall into each category?</li>
+<li>How are respondents divided across the three body image categories? Are they equally divided? If not, do the percentages follow some other kind of pattern?</li>
+</ul>
+</div>
+<div id="numerical-measures" class="section level2">
+<h2>Numerical Measures</h2>
+<p>In order to summarize the distribution of a categorical variable, we first create a table of the different values (categories) the variable takes, how many times each value occurs (count) and, more importantly, how often each value occurs (by converting the counts to percentages).</p>
+<ul>
+<li>The result is often called a Frequency Distribution or Frequency Table.</li>
+<li>A Frequency Distribution or Frequency Table is the primary set of numerical measures for one categorical variable.</li>
+<li>Consists of a table with each category along with the count and percentage for each category.</li>
+<li>Provides a summary of the distribution for one categorical variable.</li>
+</ul>
+<div id="one-way-frequency-tablecounts" class="section level3">
+<h3>One-way Frequency Table(Counts)</h3>
+<pre class="r"><code># One-way frequency table 
+data %&gt;% 
+  group_by(BMICat) %&gt;% 
+  summarise(frequency = n())</code></pre>
+<pre><code># A tibble: 4 × 2
+  BMICat      frequency
+  &lt;fct&gt;           &lt;int&gt;
+1 Normal             62
+2 Obese               2
+3 Overweight         17
+4 Underweight        27</code></pre>
+</div>
+<div id="one-way-frequency-tablecounts-percentage" class="section level3">
+<h3>One-way Frequency Table(Counts, Percentage)</h3>
+<pre class="r"><code>data %&gt;% 
+  group_by(BMICat) %&gt;% 
+  summarise(counts = n()) %&gt;% 
+  mutate(percent = counts/sum(counts) *100) </code></pre>
+<pre><code># A tibble: 4 × 3
+  BMICat      counts percent
+  &lt;fct&gt;        &lt;int&gt;   &lt;dbl&gt;
+1 Normal          62   57.4 
+2 Obese            2    1.85
+3 Overweight      17   15.7 
+4 Underweight     27   25   </code></pre>
+</div>
+</div>
+<div id="visual-or-graphical-displays" class="section level2">
+<h2>Visual or Graphical Displays</h2>
+<p>There are two simple graphical displays for visualizing the distribution of one categorical variable:</p>
+<ul>
+<li>Bar Charts</li>
+<li>Pie Charts</li>
+</ul>
+<div id="bar-charts" class="section level3">
+<h3>Bar Charts</h3>
+<ul>
+<li>To describe the number of observations in each category of the discrete variable</li>
+<li>To visualize estimated error for discrete variables</li>
+</ul>
+<pre class="r"><code># Visualize one categorical variable; `fct_infreq()` for sorting the bar 
+data %&gt;% 
+  ggplot(aes(x = BMICat))+
+  geom_bar(fill = &quot;#97B3C6&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-3-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># # Sorting Bar Chart by using `fct_infreq()`
+data %&gt;% 
+  ggplot(aes(x = fct_infreq(BMICat)))+
+  geom_bar(fill = &quot;#97B3C6&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-4-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Summaries(counts) data for visualizing the distribution 
+df1 &lt;- data %&gt;% 
+  group_by(BMICat) %&gt;% 
+  summarise(counts = n()) %&gt;% 
+  arrange(counts)
+
+df1</code></pre>
+<pre><code># A tibble: 4 × 2
+  BMICat      counts
+  &lt;fct&gt;        &lt;int&gt;
+1 Obese            2
+2 Overweight      17
+3 Underweight     27
+4 Normal          62</code></pre>
+<pre class="r"><code># Show the observations number on the top the bar 
+ggplot(df1, aes(x = BMICat, y = counts)) +
+  geom_bar(fill = &quot;#97B3C6&quot;, stat = &quot;identity&quot;) +
+  geom_text(aes(label = counts), vjust = -0.3)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-6-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># # Sorting bar by using `reorder()`
+ggplot(df1, aes(x = reorder(BMICat, counts), y = counts)) +
+  geom_bar(fill = &quot;#97B3C6&quot;, stat = &quot;identity&quot;) +
+  geom_text(aes(label = counts), vjust = -0.3)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-7-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># # Sorting bar by using `reorder()` and `desc()`
+ggplot(df1, aes(x = reorder(BMICat, desc(counts)), y = counts)) +
+  geom_bar(fill = &quot;#97B3C6&quot;, stat = &quot;identity&quot;) +
+  geom_text(aes(label = counts), vjust = -0.3)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-8-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Calculate percentage of each category 
+df2 &lt;- data %&gt;% 
+  group_by(BMICat) %&gt;% 
+  summarise(counts = n()) %&gt;% 
+  arrange(desc(BMICat)) %&gt;% 
+  mutate(prop = round(counts*100/sum(counts), 1))
+df2</code></pre>
+<pre><code># A tibble: 4 × 3
+  BMICat      counts  prop
+  &lt;fct&gt;        &lt;int&gt; &lt;dbl&gt;
+1 Underweight     27  25  
+2 Overweight      17  15.7
+3 Obese            2   1.9
+4 Normal          62  57.4</code></pre>
+<pre class="r"><code># Sorting the bars using `reorder()`
+ggplot(df2, aes(x = reorder(BMICat, counts), y = prop)) +
+  geom_bar(fill = &quot;#97B3C6&quot;, stat = &quot;identity&quot;) +
+  geom_text(aes(label = prop), vjust = -0.3)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-10-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Show the percentage(%) on the of the bar 
+ggplot(df2, aes(x = BMICat, y = prop)) +
+  geom_bar(fill = &quot;#97B3C6&quot;, stat = &quot;identity&quot;) +
+  geom_text(aes(label = prop), vjust = -0.3)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-11-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Sorting the bars using `reorder()` and  `desc()`
+ggplot(df2, aes(x = reorder(BMICat, desc(prop)), y = prop)) +
+  geom_bar(fill = &quot;#97B3C6&quot;, stat = &quot;identity&quot;) +
+  geom_text(aes(label = prop), vjust = -0.3)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-12-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Customize the plot
+ggplot(df2, aes(x = reorder(BMICat, desc(counts)), y = prop)) +
+  geom_bar(fill = &quot;#97B3C6&quot;, stat = &quot;identity&quot;) +
+  geom_text(aes(label = prop), vjust = -0.3)+
+  labs(title = &quot;Distribution of BMICat&quot;, 
+       x = &quot;BMI Category&quot;, 
+       y = &quot;Proportion&quot;, 
+       caption = &quot;Data Source: https://bolt.mph.ufl.edu/&quot;) </code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-13-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Create bar chart using ggpubr 
+ggbarplot(df2, x = &quot;BMICat&quot;, y = &quot;counts&quot;, fill = &quot;#97B3C6&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-14-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># show counts 
+ggbarplot(df2, x = &quot;BMICat&quot;, y = &quot;counts&quot;, fill = &quot;#97B3C6&quot;, label = TRUE, lab.pos = &quot;out&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-15-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># show counts 
+ggbarplot(df2, x = &quot;BMICat&quot;, y = &quot;prop&quot;, fill = &quot;#97B3C6&quot;, label = TRUE, lab.pos = &quot;out&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-16-1.png" width="480" style="display: block; margin: auto;" /></p>
+</div>
+<div id="pie-charts" class="section level3">
+<h3>Pie charts</h3>
+<pre class="r"><code>ggpie(df2, &quot;prop&quot;, label = &quot;BMICat&quot;, fill = &quot;BMICat&quot;, 
+      color = &quot;white&quot;, 
+      palette = c(&quot;#00AFBB&quot;, &quot;#E7B800&quot;, &quot;#FC4E07&quot;, &quot;#97B3C6&quot;))</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-17-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Show group names and value as labels
+labs &lt;- paste0(df2$BMICat, &quot; (&quot;, df2$prop, &quot;%)&quot;)
+
+ggpie(df2, &quot;prop&quot;, label =labs, fill = &quot;BMICat&quot;, 
+      color = &quot;white&quot;, 
+      palette = c(&quot;#00AFBB&quot;, &quot;#E7B800&quot;, &quot;#FC4E07&quot;, &quot;#97B3C6&quot;), lab.pos = &quot;in&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-18-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Change the position and font color of labels
+labs &lt;- paste0(df2$BMICat, &quot;(&quot;, df2$prop, &quot;%)&quot;)
+
+ggpie(df2, &quot;prop&quot;, label =labs, 
+      lab.pos = &quot;in&quot;, lab.font = &quot;white&quot;,
+      fill = &quot;BMICat&quot;, 
+      color = &quot;white&quot;, 
+      palette = c(&quot;#00AFBB&quot;, &quot;#E7B800&quot;, &quot;#FC4E07&quot;, &quot;#97B3C6&quot;))</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-19-1.png" width="480" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+<div id="one-quantitative-variable" class="section level1">
+<h1>One Quantitative Variable</h1>
+<ul>
+<li>Distribution of One Quantitative Variable</li>
+<li>Numerical Measures</li>
+<li>Graphs</li>
+</ul>
+<div id="distribution-of-one-quantitative-variable" class="section level2">
+<h2>Distribution of One Quantitative Variable</h2>
+<p>In this section, we will explore the data collected from a quantitative variable, and learn how to describe and summarize the important features of its distribution.</p>
+<p>We will learn how to display the distribution using graphs and discuss a variety of numerical measures.</p>
+</div>
+<div id="numerical-measures-1" class="section level2">
+<h2>Numerical Measures</h2>
+<div id="measures-of-center" class="section level3">
+<h3>Measures of Center</h3>
+<ul>
+<li>Introduction</li>
+<li>Mean</li>
+<li>Median</li>
+<li>Comparing the Mean and the Median</li>
+</ul>
+<div id="mean" class="section level4">
+<h4>Mean</h4>
+<pre class="r"><code># Average BMI
+data %&gt;% 
+  summarise(avg_bmi = mean(BMI))</code></pre>
+<pre><code>   avg_bmi
+1 22.03186</code></pre>
+</div>
+<div id="median" class="section level4">
+<h4>Median</h4>
+<pre class="r"><code># Median BMI
+data %&gt;% 
+  summarise(median_bmi = median(BMI))</code></pre>
+<pre><code>  median_bmi
+1   21.57798</code></pre>
+</div>
+</div>
+</div>
+<div id="graphs" class="section level2">
+<h2>Graphs</h2>
+<div id="histograms" class="section level3">
+<h3>Histograms</h3>
+<ul>
+<li><p>Shape: Overall appearance of histogram. Can be symmetric, bell-shaped, left skewed, right skewed, etc.</p></li>
+<li><p>Center: Mean or Median</p></li>
+<li><p>Spread: How far our data spreads. Range, Interquartile Range (IQR),standard deviation, variance.</p></li>
+<li><p>Outliers: Data points that fall far from the bulk of the data</p></li>
+</ul>
+<p><img src="img/images-mod1-histogram5.gif" style="display: block; margin: auto;" /></p>
+<p><img src="img/images-mod1-histogram6.gif" style="display: block; margin: auto;" /></p>
+<p><img src="img/images-mod1-center4.gif" style="display: block; margin: auto;" />
+<strong>Interpretation:</strong> The distribution of height is bell
+shaped with a center of about 10.001, a range of 11 inches (5 to 16), and no apparent outliers.</p>
+<pre class="r"><code># Calculate average height 
+data %&gt;% 
+  summarise(avg_height = mean(Height))</code></pre>
+<pre><code>  avg_height
+1   1.732685</code></pre>
+<pre class="r"><code># Show the center in histogram 
+gghistogram(data, x = &quot;Height&quot;, add = &quot;mean&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-26-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="img/images-mod1-center5.gif" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Calculate median height 
+data %&gt;% 
+  summarise(median_height = median(Height))</code></pre>
+<pre><code>  median_height
+1          1.73</code></pre>
+<pre class="r"><code># Show the center in histogram 
+gghistogram(data, x = &quot;Height&quot;, add = &quot;median&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-29-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Add mean  
+gghistogram(data, x = &quot;Height&quot;, bins = 15, fill = &quot;#97B3C6&quot;, title = &quot;Histogram of Height&quot;, xlab = &quot;Height(m)&quot;, ylab = &quot;Frequency&quot;, add = &quot;mean&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-30-1.png" width="480" style="display: block; margin: auto;" />
+<strong>Interpretation:</strong> The distribution of height is roughly bell
+shaped with a center of about 1.7m, a range of 0.55 meters (1.40 to 1.95), and no apparent outliers.</p>
+<pre class="r"><code># Change the bins size 
+gghistogram(data, x = &quot;Height&quot;, bins = 15, fill = &quot;#58508d&quot; , add = &quot;mean&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-31-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Compare mean and median 
+data %&gt;% 
+  summarise(avg_bmi = mean(BMI), 
+            median_bmi = median(BMI))</code></pre>
+<pre><code>   avg_bmi median_bmi
+1 22.03186   21.57798</code></pre>
+</div>
+</div>
+<div id="describing-distributions" class="section level2">
+<h2>Describing Distributions</h2>
+<ul>
+<li>Features of Distributions of Quantitative Variables</li>
+<li>Shape (Symmetry/Skewness, Modality)</li>
+<li>Center</li>
+<li>Spread</li>
+<li>Outliers</li>
+</ul>
+<pre class="r"><code># Load and explore diabetes data 
+diabetes &lt;- read.csv(&quot;data/diabetes.csv&quot;, stringsAsFactors = TRUE)
+gt(head(diabetes))</code></pre>
+<div id="osncjrvket" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#osncjrvket .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#osncjrvket .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#osncjrvket .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#osncjrvket .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#osncjrvket .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#osncjrvket .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#osncjrvket .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#osncjrvket .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#osncjrvket .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#osncjrvket .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#osncjrvket .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#osncjrvket .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#osncjrvket .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#osncjrvket .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#osncjrvket .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#osncjrvket .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#osncjrvket .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#osncjrvket .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#osncjrvket .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#osncjrvket .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#osncjrvket .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#osncjrvket .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#osncjrvket .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#osncjrvket .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#osncjrvket .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#osncjrvket .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#osncjrvket .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#osncjrvket .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#osncjrvket .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#osncjrvket .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#osncjrvket .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#osncjrvket .gt_left {
+  text-align: left;
+}
+
+#osncjrvket .gt_center {
+  text-align: center;
+}
+
+#osncjrvket .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#osncjrvket .gt_font_normal {
+  font-weight: normal;
+}
+
+#osncjrvket .gt_font_bold {
+  font-weight: bold;
+}
+
+#osncjrvket .gt_font_italic {
+  font-style: italic;
+}
+
+#osncjrvket .gt_super {
+  font-size: 65%;
+}
+
+#osncjrvket .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#osncjrvket .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#osncjrvket .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#osncjrvket .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#osncjrvket .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#osncjrvket .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Pregnancies</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Glucose</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">BloodPressure</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">SkinThickness</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Insulin</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">BMI</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">DiabetesPedigreeFunction</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Age</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Outcome</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_right">6</td>
+<td class="gt_row gt_right">148</td>
+<td class="gt_row gt_right">72</td>
+<td class="gt_row gt_right">35</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">33.6</td>
+<td class="gt_row gt_right">0.627</td>
+<td class="gt_row gt_right">50</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">85</td>
+<td class="gt_row gt_right">66</td>
+<td class="gt_row gt_right">29</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">26.6</td>
+<td class="gt_row gt_right">0.351</td>
+<td class="gt_row gt_right">31</td>
+<td class="gt_row gt_right">0</td></tr>
+    <tr><td class="gt_row gt_right">8</td>
+<td class="gt_row gt_right">183</td>
+<td class="gt_row gt_right">64</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">23.3</td>
+<td class="gt_row gt_right">0.672</td>
+<td class="gt_row gt_right">32</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">89</td>
+<td class="gt_row gt_right">66</td>
+<td class="gt_row gt_right">23</td>
+<td class="gt_row gt_right">94</td>
+<td class="gt_row gt_right">28.1</td>
+<td class="gt_row gt_right">0.167</td>
+<td class="gt_row gt_right">21</td>
+<td class="gt_row gt_right">0</td></tr>
+    <tr><td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">137</td>
+<td class="gt_row gt_right">40</td>
+<td class="gt_row gt_right">35</td>
+<td class="gt_row gt_right">168</td>
+<td class="gt_row gt_right">43.1</td>
+<td class="gt_row gt_right">2.288</td>
+<td class="gt_row gt_right">33</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_right">5</td>
+<td class="gt_row gt_right">116</td>
+<td class="gt_row gt_right">74</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">25.6</td>
+<td class="gt_row gt_right">0.201</td>
+<td class="gt_row gt_right">30</td>
+<td class="gt_row gt_right">0</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+<div id="shape" class="section level3">
+<h3>Shape</h3>
+<p>When describing the shape of a distribution, we should consider:</p>
+<ul>
+<li>Symmetry/skewness of the distribution.</li>
+<li>Peakedness (modality) — the number of peaks (modes) the distribution has.</li>
+</ul>
+</div>
+<div id="symmetric-distributions" class="section level3">
+<h3>Symmetric Distributions</h3>
+<p><img src="img/images-mod1-histogram2.gif" style="display: block; margin: auto;" /></p>
+<p><img src="img/images-mod1-histogram3.gif" style="display: block; margin: auto;" /></p>
+<p><img src="img/images-mod1-histogram4.gif" style="display: block; margin: auto;" />
+Note that all three distributions are symmetric, but are different in their modality (peakedness).</p>
+<ul>
+<li>The first distribution is unimodal — it has one mode (roughly at 10) around which the observations are concentrated.</li>
+<li>The second distribution is bimodal — it has two modes (roughly at 10 and 20) around which the observations are concentrated.</li>
+<li>The third distribution is kind of flat, or uniform. The distribution has no modes, or no value around which the observations are concentrated. Rather, we see that the observations are roughly uniformly distributed among the different values.</li>
+</ul>
+<pre class="r"><code># Check distribution of age 
+gghistogram(diabetes, x = &quot;BMI&quot;, fill = &quot;#665191&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-37-1.png" width="480" style="display: block; margin: auto;" /></p>
+</div>
+<div id="skewed-right-distributions" class="section level3">
+<h3>Skewed Right Distributions</h3>
+<p>A distribution is called skewed right if, as in the histogram above, the right tail (larger values) is much longer than the left tail (small values).
+<img src="img/images-mod1-histogram5.gif" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Check distribution of age 
+gghistogram(diabetes, x = &quot;Age&quot;, fill = &quot;#665191&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-39-1.png" width="480" style="display: block; margin: auto;" /></p>
+</div>
+<div id="skewed-left-distributions" class="section level3">
+<h3>Skewed Left Distributions</h3>
+<p>A distribution is called skewed left if, as in the histogram above, the left tail (smaller values) is much longer than the right tail (larger values).</p>
+<p><img src="img/images-mod1-histogram6.gif" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Check distribution of Glucose 
+gghistogram(diabetes, x = &quot;Glucose&quot;, fill = &quot;#665191&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-41-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Comments:
+- Distributions with more than two peaks are generally called multimodal.
+- Bimodal or multimodal distributions can be evidence that two distinct groups are represented.
+- Unimodal, Bimodal, and multimodal distributions may or may not be symmetric.</p>
+<p><img src="img/images-mod1-bimode_hist.png" width="100" style="display: block; margin: auto;" /></p>
+</div>
+<div id="center" class="section level3">
+<h3>Center</h3>
+<p>The center of the distribution is often used to represent a typical value.</p>
+<pre class="r"><code># Check distribution of BMI 
+gghistogram(diabetes, x = &quot;BMI&quot;, fill = &quot;#665191&quot;, add = &quot;mean&quot;, add_density = TRUE)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-43-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Check distribution of BMI 
+gghistogram(diabetes, x = &quot;BMI&quot;, fill = &quot;#665191&quot;, add = &quot;median&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-44-1.png" width="480" style="display: block; margin: auto;" /></p>
+</div>
+<div id="spread" class="section level3">
+<h3>Spread</h3>
+<p>One way to measure the spread (also called variability or variation) of the distribution is to use the approximate range covered by the data.</p>
+<pre class="r"><code># Check distribution of BloodPressure 
+gghistogram(diabetes, x = &quot;BloodPressure&quot;, fill = &quot;#665191&quot;, add = &quot;median&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-45-1.png" width="480" style="display: block; margin: auto;" /></p>
+</div>
+<div id="outliers" class="section level3">
+<h3>Outliers</h3>
+<p>Outliers are observations that fall outside the overall pattern.</p>
+<p><img src="img/images-mod1-histogram7.gif" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Check distribution of BloodPressure 
+gghistogram(diabetes, x = &quot;BloodPressure&quot;, fill = &quot;#665191&quot;, add = &quot;median&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-47-1.png" width="480" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="measures-of-spread" class="section level2">
+<h2>Measures of Spread</h2>
+<ul>
+<li>Range</li>
+<li>Inter-Quartile Range (IQR)</li>
+<li>Standard Deviation</li>
+<li>Properties of the Standard Deviation</li>
+<li>Choosing Numerical Measures</li>
+</ul>
+<div id="range" class="section level3">
+<h3>Range</h3>
+<p>The range covered by the data is the most intuitive measure of variability. The range is exactly the distance between the smallest data point (min) and the largest one (Max).</p>
+<p>Range = Max – min</p>
+<pre class="r"><code>data %&gt;% 
+  summarise(max_height = max(Height), 
+            min_height = min(Height), 
+            range = max_height - min_height)</code></pre>
+<pre><code>  max_height min_height range
+1       1.95        1.4  0.55</code></pre>
+</div>
+<div id="inter-quartile-range-iqr" class="section level3">
+<h3>Inter-Quartile Range (IQR)</h3>
+<p>While the range quantifies the variability by looking at the range covered by ALL the data, the Inter-Quartile Range or IQR measures the variability of a distribution by giving us the range covered by the MIDDLE 50% of the data.</p>
+<ul>
+<li>IQR = Q3 – Q1</li>
+<li>Q3 = 3rd Quartile = 75th Percentile</li>
+<li>Q1 = 1st Quartile = 25th Percentile</li>
+</ul>
+<pre class="r"><code>data %&gt;% 
+  summarise(
+            min = fivenum(Weight)[1],
+            Q1 = fivenum(Weight)[2],
+            median = fivenum(Weight)[3],
+            Q3 = fivenum(Weight)[4],
+            max = fivenum(Weight)[5], 
+            IQR = Q3 - Q1)</code></pre>
+<pre><code>  min   Q1 median Q3 max  IQR
+1  41 56.5     63 75 110 18.5</code></pre>
+</div>
+<div id="standard-deviation" class="section level3">
+<h3>Standard Deviation</h3>
+<pre class="r"><code>data %&gt;% 
+  summarise(avg_height = mean(Height), 
+            std = sd(Height)) </code></pre>
+<pre><code>  avg_height       std
+1   1.732685 0.1012133</code></pre>
+</div>
+<div id="variance" class="section level3">
+<h3>Variance</h3>
+<pre class="r"><code>data %&gt;% 
+  summarise(avg_height = mean(Height), 
+            var_height = var(Height)) </code></pre>
+<pre><code>  avg_height var_height
+1   1.732685 0.01024412</code></pre>
+</div>
+</div>
+<div id="measures-of-position" class="section level2">
+<h2>Measures of Position</h2>
+<ul>
+<li>Percentiles</li>
+<li>Five-Number Summary</li>
+<li>Standardized Scores (Z-Scores)</li>
+<li>Measures of Position</li>
+</ul>
+<div id="percentiles" class="section level3">
+<h3>Percentiles</h3>
+<p>In general the P-th percentile can be interpreted as a location in the data for which approximately P% of the other values in the distribution fall below the P-th percentile and (100 –P)% fall above the P-th percentile.</p>
+</div>
+<div id="five-number-summary" class="section level3">
+<h3>Five Number Summary</h3>
+<pre class="r"><code>data %&gt;% 
+  summarise(
+            min = fivenum(Weight)[1],
+            Q1 = fivenum(Weight)[2],
+            median = fivenum(Weight)[3],
+            Q3 = fivenum(Weight)[4],
+            max = fivenum(Weight)[5])</code></pre>
+<pre><code>  min   Q1 median Q3 max
+1  41 56.5     63 75 110</code></pre>
+</div>
+<div id="standardized-scores-z-scores" class="section level3">
+<h3>Standardized Scores (Z-Scores)</h3>
+<p>Z = (x – mean)/standard deviation</p>
+<pre class="r"><code>data %&gt;% 
+  mutate(zscore = (BMI - mean(BMI) / sd(BMI))) %&gt;% 
+  head() </code></pre>
+<pre><code>  Height Weight Age Gender Smokes Alcohol Exercise Ran Pulse1 Pulse2      BMI
+1   1.73     57  18 Female     No     Yes Moderate  No     86     88 19.04507
+2   1.79     58  19 Female     No     Yes Moderate Yes     82    150 18.10181
+3   1.67     62  18 Female     No     Yes     High Yes     96    176 22.23099
+4   1.95     84  18   Male     No     Yes     High  No     71     73 22.09073
+5   1.73     64  18 Female     No     Yes      Low  No     90     88 21.38394
+6   1.84     74  22   Male     No     Yes      Low Yes     78    141 21.85728
+       BMICat   zscore
+1 Underweight 12.37439
+2 Underweight 11.43112
+3      Normal 15.56030
+4      Normal 15.42004
+5      Normal 14.71326
+6      Normal 15.18659</code></pre>
+</div>
+<div id="measures-of-position-1" class="section level3">
+<h3>Measures of Position</h3>
+<p>Measures of position also allow us to compare values from different distributions. For example, we can present the percentiles or z-scores of an individual’s height and weight. These two measures together would provide a better picture of how the individual fits in the overall population than either would alone.</p>
+<p>Although measures of position are not stressed in this course as much as measures of center and spread, we have seen and will see many measures of position used in various aspects of examining the distribution of one variable and it is good to recognize them as measures of position when they appear.</p>
+</div>
+</div>
+<div id="outliers-detection" class="section level2">
+<h2>Outliers Detection</h2>
+<ul>
+<li>Using the IQR to Detect Outliers</li>
+<li>The 1.5(IQR) Criterion for Outliers</li>
+<li>The 3(IQR) Criterion for Outliers</li>
+<li>Understanding Outliers</li>
+</ul>
+<div id="using-the-iqr-to-detect-outliers" class="section level3">
+<h3>Using the IQR to Detect Outliers</h3>
+<p>So far we have quantified the idea of center, and we are in the middle of the discussion about measuring spread, but we haven’t really talked about a method or rule that will help us classify extreme observations as outliers. The IQR is commonly used as the basis for a rule of thumb for identifying outliers.</p>
+</div>
+<div id="the-1.5iqr-criterion-for-outliers" class="section level3">
+<h3>The 1.5(IQR) Criterion for Outliers</h3>
+<p>An observation is considered a suspected outlier or potential outlier if it is:</p>
+<ul>
+<li>below Q1 – 1.5(IQR) or</li>
+<li>above Q3 + 1.5(IQR)</li>
+</ul>
+<p>The following picture (not to scale) illustrates this rule:</p>
+<p><img src="img/images-mod1-spread10.gif" style="display: block; margin: auto;" /></p>
+<p><img src="img/images-mod1-spread11.gif" style="display: block; margin: auto;" /></p>
+</div>
+<div id="the-3iqr-criterion-for-outliers" class="section level3">
+<h3>The 3(IQR) Criterion for Outliers</h3>
+<p>An observation is considered an EXTREME outlier if it is:</p>
+<ul>
+<li>below Q1 – 3(IQR) or</li>
+<li>above Q3 + 3(IQR)</li>
+</ul>
+<p><img src="img/images-mod1-spread11.gif" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>ds &lt;- read.csv(&quot;data/500_Person_Gender_Height_Weight_Index.csv&quot;)
+head(ds)</code></pre>
+<pre><code>  Gender Height Weight Index
+1   Male    174     96     4
+2   Male    189     87     2
+3 Female    185    110     4
+4 Female    195    104     3
+5   Male    149     61     3
+6   Male    189    104     3</code></pre>
+<pre class="r"><code>gghistogram(ds, x = &quot;Height&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-58-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>gghistogram(ds, x = &quot;Weight&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-59-1.png" width="480" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="boxplots" class="section level2">
+<h2>Boxplots</h2>
+<ul>
+<li>The Five Number Summary</li>
+<li>The Boxplot</li>
+<li>Side-By-Side (Comparative) Boxplots</li>
+</ul>
+<div id="the-five-number-summary" class="section level3">
+<h3>The Five Number Summary</h3>
+<p>So far, in our discussion about measures of spread, some key players were:</p>
+<ul>
+<li>the extremes (min and Max), which provide the range covered by all the data; and</li>
+<li>the quartiles (Q1, M and Q3), which together provide the IQR, the range covered by the middle 50% of the data.</li>
+</ul>
+<p>Recall that the combination of all five numbers (min, Q1, M, Q3, Max) is called the five number summary, and provides a quick numerical description of both the center and spread of a distribution.</p>
+<pre class="r"><code>ds %&gt;% 
+  summarise(
+            min = fivenum(Height)[1],
+            Q1 = fivenum(Height)[2],
+            median = fivenum(Height)[3],
+            Q3 = fivenum(Height)[4],
+            max = fivenum(Height)[5])</code></pre>
+<pre><code>  min  Q1 median  Q3 max
+1 140 156  170.5 184 199</code></pre>
+</div>
+<div id="the-boxplot" class="section level3">
+<h3>The Boxplot</h3>
+<ol style="list-style-type: decimal">
+<li>The central box spans from Q1 to Q3. In our example, the box spans from 32 to 41.5. Note that the width of the box has no meaning.
+<img src="img/images-mod1-boxplot1.gif" style="display: block; margin: auto;" /></li>
+<li>A line in the box marks the median M, which in our case is 35.</li>
+</ol>
+<p><img src="img/images-mod1-boxplot2.gif" style="display: block; margin: auto;" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Lines extend from the edges of the box to the smallest and largest observations that were not classified as suspected outliers (using the 1.5xIQR criterion). In our example, we have no low outliers, so the bottom line goes down to the smallest observation, which is 21. Since we have three high outliers (61,74, and 80), the top line extends only up to 49, which is the largest observation that has not been flagged as an outlier.</li>
+</ol>
+<p><img src="img/images-mod1-boxplot3.gif" style="display: block; margin: auto;" />
+4. outliers are marked with asterisks (*).
+<img src="img/images-mod1-boxplot4.gif" style="display: block; margin: auto;" />
+To summarize: the following information is visually depicted in the boxplot:</p>
+<p>the five number summary (blue)
+the range and IQR (red)
+outliers (green)</p>
+<p><img src="img/images-mod1-boxplot6.gif" style="display: block; margin: auto;" /></p>
+</div>
+<div id="side-by-side-comparative-boxplots" class="section level3">
+<h3>Side-By-Side (Comparative) Boxplots</h3>
+<p><img src="img/images-mod1-boxplot8.gif" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>ggboxplot(ds, y = &quot;Height&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-67-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>ggboxplot(ds, y = &quot;Weight&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-68-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>ggboxplot(ds, x = &quot;Gender&quot;, y = &quot;Height&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-69-1.png" width="480" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="the-normal-shape" class="section level2">
+<h2>The “Normal” Shape</h2>
+<ul>
+<li>The Standard Deviation Rule</li>
+<li>Visual Methods of Assessing Normality</li>
+<li>Standardized Scores (Z-Scores)</li>
+</ul>
+<div id="the-standard-deviation-rule" class="section level3">
+<h3>The Standard Deviation Rule</h3>
+<p><img src="img/images-mod1-sdgraph1.gif" style="display: block; margin: auto;" /></p>
+</div>
+<div id="the-standard-deviation-rule-1" class="section level3">
+<h3>The Standard Deviation Rule:</h3>
+<ul>
+<li>Approximately 68% of the observations fall within 1 standard deviation of the mean.</li>
+<li>Approximately 95% of the observations fall within 2 standard deviations of the mean.</li>
+<li>Approximately 99.7% (or virtually all) of the observations fall within 3 standard deviations of the mean.
+<img src="img/images-mod1-sdgraph2.gif" style="display: block; margin: auto;" /></li>
+</ul>
+<p><img src="img/images-mod1-sdgraph3.gif" style="display: block; margin: auto;" />
+<img src="img/images-mod1-sdgraph4.gif" style="display: block; margin: auto;" /></p>
+<p><img src="img/images-mod1-sdgraph5.gif" style="display: block; margin: auto;" /></p>
+<p><img src="img/stdrulefull.jpg" width="73" style="display: block; margin: auto;" /></p>
+</div>
+<div id="visual-methods-of-assessing-normality" class="section level3">
+<h3>Visual Methods of Assessing Normality</h3>
+<p><img src="img/images-mod1-Hist-Norm1.png" width="79" style="display: block; margin: auto;" /></p>
+<p><img src="img/images-mod1-360px-Normal-normal-qq.svg_.png" width="72" style="display: block; margin: auto;" /></p>
+<p><img src="img/Graph1_Symmetric.png" width="257" style="display: block; margin: auto;" />
+<img src="img/Graph1_SkewedRight.png" width="257" style="display: block; margin: auto;" /></p>
+</div>
+<div id="standardized-scores-z-scores-1" class="section level3">
+<h3>Standardized Scores (Z-Scores)</h3>
+<p>Z = (x - mean) / standard deviation</p>
+<pre class="r"><code>ds %&gt;% 
+  mutate(zscore = (Height - mean(Height)) / sd(Height)) %&gt;% 
+  head() </code></pre>
+<pre><code>  Gender Height Weight Index     zscore
+1   Male    174     96     4  0.2476907
+2   Male    189     87     2  1.1637067
+3 Female    185    110     4  0.9194357
+4 Female    195    104     3  1.5301130
+5   Male    149     61     3 -1.2790025
+6   Male    189    104     3  1.1637067</code></pre>
+</div>
+</div>
+</div>
+<div id="role-type-classification" class="section level1">
+<h1>Role Type Classification</h1>
+<p>While it is fundamentally important to know how to describe the distribution of a single variable, most studies pose research questions that involve exploring the relationship between two (or more) variables. These research questions are investigated using a sample from the population of interest.</p>
+<div id="example-research-questions" class="section level2">
+<h2>Example Research Question(s)</h2>
+<ol style="list-style-type: decimal">
+<li>Is there a relationship between gender and test scores on a particular standardized test? Other ways of phrasing the same research question:</li>
+</ol>
+<ul>
+<li>Is performance on the test related to gender?</li>
+<li>Is there a gender effect on test scores?</li>
+<li>Are there differences in test scores between males and females?</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Are the smoking habits of a person (yes, no) related to the person’s gender(male, female)?</li>
+</ol>
+</div>
+<div id="role-of-a-variable-in-a-study" class="section level2">
+<h2>Role of a Variable in a Study</h2>
+<p>In most studies involving two variables, each of the variables has a role. We distinguish between:</p>
+<ul>
+<li>Response variable — the outcome of the study; and</li>
+<li>Eexplanatory variable — the variable that claims to explain, predict or affect the response.</li>
+</ul>
+<p>As we mentioned earlier the variable we wish to predict is commonly called the dependent variable, the outcome variable, or the response variable. Any variable we are using to predict (or explain differences) in the outcome is commonly called an explanatory variable, an independent variable, a predictor variable, or a covariate.</p>
+<p>Typically the explanatory variable is denoted by X, and the response variable by Y.</p>
+<div id="example" class="section level3">
+<h3>Example</h3>
+<ol style="list-style-type: decimal">
+<li>Research Question: Is there a relationship between gender and test scores on a particular standardized test? Other ways of phrasing the same research question:</li>
+</ol>
+<ul>
+<li><p>Is performance on the test related to gender?</p></li>
+<li><p>Is there a gender effect on test scores?</p></li>
+<li><p>Are there differences in test scores between males and females?</p></li>
+<li><p>Gender is the explanatory variable</p></li>
+<li><p>Test score is the response variable</p></li>
+</ul>
+</div>
+</div>
+<div id="role-type-classification-1" class="section level2">
+<h2>Role-Type Classification</h2>
+<p>If we further classify each of the two relevant variables according to type (categorical or quantitative), we get the following 4 possibilities for “role-type classification”</p>
+<ul>
+<li>Categorical explanatory and quantitative response (Case CQ)</li>
+<li>Categorical explanatory and categorical response (Case CC)</li>
+<li>Quantitative explanatory and quantitative response (Case QQ)</li>
+<li>Quantitative explanatory and categorical response (Case QC)</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-81"></span>
+<img src="img/images-mod2-relationships-overview1.gif" alt="Figure Caption"  />
+<p class="caption">
+Figure 1: Figure Caption
+</p>
+</div>
+<div id="example-1" class="section level3">
+<h3>Example</h3>
+<ol style="list-style-type: decimal">
+<li>Research Question: Is there a relationship between gender and test scores on a particular standardized test? Other ways of phrasing the same research question:</li>
+</ol>
+<ul>
+<li><p>Is performance on the test related to gender?</p></li>
+<li><p>Is there a gender effect on test scores?</p></li>
+<li><p>Are there differences in test scores between males and females?</p></li>
+<li><p>Gender is the explanatory variable</p></li>
+<li><p>Test score is the response variable</p></li>
+<li><p>Therefore this is an example of case C → Q.</p></li>
+</ul>
+</div>
+</div>
+<div id="case-c-q-categorical-explanatory-and-quantitative-response" class="section level2">
+<h2>Case C-Q Categorical Explanatory and Quantitative Response</h2>
+<pre class="r"><code>data %&gt;% 
+  select(Gender, BMI) %&gt;% 
+  group_by(Gender) %&gt;% 
+  summarise(Avg_BMI = mean(BMI))</code></pre>
+<pre><code># A tibble: 2 × 2
+  Gender Avg_BMI
+  &lt;fct&gt;    &lt;dbl&gt;
+1 Female    20.8
+2 Male      23.1</code></pre>
+<pre class="r"><code>data %&gt;% 
+  group_by(Gender) %&gt;% 
+  summarise(n = n(),
+            min = fivenum(BMI)[1],
+            Q1 = fivenum(BMI)[2],
+            median = fivenum(BMI)[3],
+            Q3 = fivenum(BMI)[4],
+            max = fivenum(BMI)[5])</code></pre>
+<pre><code># A tibble: 2 × 7
+  Gender     n   min    Q1 median    Q3   max
+  &lt;fct&gt;  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 Female    50  16.6  19.0   20.6  22.2  29.0
+2 Male      58  16.8  20.2   22.9  25.1  32.1</code></pre>
+<pre class="r"><code>ggboxplot(data, x = &quot;Gender&quot;, y = &quot;BMI&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-84-1.png" width="480" style="display: block; margin: auto;" /></p>
+</div>
+<div id="case-c-c---two-categorical-variables" class="section level2">
+<h2>Case C-C - Two Categorical Variables</h2>
+<pre class="r"><code># https://www.statology.org/dplyr-crosstab/
+df3 &lt;- data %&gt;% 
+  group_by(Gender, Ran) %&gt;% 
+  tally() %&gt;% 
+  spread(Ran, n)
+df3 </code></pre>
+<pre><code># A tibble: 2 × 3
+# Groups:   Gender [2]
+  Gender    No   Yes
+  &lt;fct&gt;  &lt;int&gt; &lt;int&gt;
+1 Female    28    22
+2 Male      35    23</code></pre>
+<pre class="r"><code># https://www.statology.org/dplyr-crosstab/
+df3 &lt;- data %&gt;% 
+  group_by(Gender, BMICat) %&gt;% 
+  tally() %&gt;% 
+  spread(BMICat, n)
+
+df3</code></pre>
+<pre><code># A tibble: 2 × 5
+# Groups:   Gender [2]
+  Gender Normal Obese Overweight Underweight
+  &lt;fct&gt;   &lt;int&gt; &lt;int&gt;      &lt;int&gt;       &lt;int&gt;
+1 Female     29    NA          3          18
+2 Male       33     2         14           9</code></pre>
+</div>
+<div id="case-q-q---two-quantitative-variables" class="section level2">
+<h2>Case Q-Q - Two Quantitative Variables</h2>
+<pre class="r"><code>data %&gt;% 
+  select(Height, Weight) %&gt;% 
+  cor()</code></pre>
+<pre><code>          Height    Weight
+Height 1.0000000 0.7413042
+Weight 0.7413042 1.0000000</code></pre>
+<div id="scatterplots" class="section level3">
+<h3>Scatterplots</h3>
+<ul>
+<li>Creating Scatterplots</li>
+<li>Interpreting Scatterplots</li>
+<li>Direction</li>
+<li>Form</li>
+<li>Strength</li>
+</ul>
+</div>
+<div id="interpreting-scatterplots" class="section level3">
+<h3>Interpreting Scatterplots</h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-88"></span>
+<img src="img/images-mod2-scatterplot5.gif" alt="Figure Caption"  />
+<p class="caption">
+Figure 2: Figure Caption
+</p>
+</div>
+</div>
+<div id="direction" class="section level3">
+<h3>Direction</h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-89"></span>
+<img src="img/directionscatterplots.gif" alt="Figure Caption"  />
+<p class="caption">
+Figure 3: Figure Caption
+</p>
+</div>
+<p>A positive (or increasing) relationship means that an increase in one of the variables is associated with an increase in the other.</p>
+<p>A negative (or decreasing) relationship means that an increase in one of the variables is associated with a decrease in the other.</p>
+<p>Not all relationships can be classified as either positive or negative.</p>
+</div>
+<div id="form" class="section level3">
+<h3>Form</h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-90"></span>
+<img src="img/images-mod2-scatterplot9.gif" alt="Figure Caption"  />
+<p class="caption">
+Figure 4: Figure Caption
+</p>
+</div>
+<p>The form of the relationship is its general shape. When identifying the form, we try to find the simplest way to describe the shape of the scatterplot. There are many possible forms. Here are a couple that are quite common:
+Relationships with a linear form are most simply described as points scattered about a line:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-91"></span>
+<img src="img/images-mod2-scatterplot10.gif" alt="Figure Caption"  />
+<p class="caption">
+Figure 5: Figure Caption
+</p>
+</div>
+<p>A scatterplot in which the points are slightly above or below a line which has been drawn through the points. Overall, the points create a shape that appears to be a fat line. In this example, the points create a negative relationship.Relationships with a non-linear (sometimes called curvilinear) form are most simply described as points dispersed around the same curved line:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-92"></span>
+<img src="img/images-mod2-scatterplot11.gif" alt="Figure Caption"  />
+<p class="caption">
+Figure 6: Figure Caption
+</p>
+</div>
+<p>There are many other possible forms for the relationship between two quantitative variables, but linear and curvilinear forms are quite common and easy to identify. Another form-related pattern that we should be aware of is clusters in the data:</p>
+</div>
+<div id="strength" class="section level3">
+<h3>Strength</h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-93"></span>
+<img src="img/strengthscatterplot.gif" alt="Figure Caption"  />
+<p class="caption">
+Figure 7: Figure Caption
+</p>
+</div>
+<p>The strength of the relationship is determined by how closely the data follow the form of the relationship. Let’s look, for example, at the following two scatterplots displaying positive, linear relationships:</p>
+<p>The strength of the relationship is determined by how closely the data points follow the form. We can see that in the left scatterplot the data points follow the linear pattern quite closely. This is an example of a strong relationship. In the right scatterplot, the points also follow the linear pattern, but much less closely, and therefore we can say that the relationship is weaker. In general, though, assessing the strength of a relationship just by looking at the scatterplot is quite problematic, and we need a numerical measure to help us with that. We will discuss that later in this section.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-94"></span>
+<img src="img/images-mod2-scatterplot14.gif" alt="Figure Caption"  />
+<p class="caption">
+Figure 8: Figure Caption
+</p>
+</div>
+<p>Data points that deviate from the pattern of the relationship are called outliers. We will see several examples of outliers during this section. Two outliers are illustrated in the scatterplot below:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-95"></span>
+<img src="img/images-mod2-scatterplot11.gif" alt="Figure Caption"  />
+<p class="caption">
+Figure 9: Figure Caption
+</p>
+</div>
+<pre class="r"><code>ggscatter(data, x = &quot;Height&quot;, y = &quot;Weight&quot;, shape = 21, size = 3,  add = &quot;reg.line&quot;, fill = &quot;lightgray&quot;,  color = &quot;Gender&quot;)</code></pre>
+<p><img src="https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/index_files/figure-html/unnamed-chunk-96-1.png" width="480" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/biostatistics-with-r/">Biostatistics with R</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/&amp;text=Interpreting%20Data%20Using%20Descriptive%20Statistics%20with%20R" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/&amp;t=Interpreting%20Data%20Using%20Descriptive%20Statistics%20with%20R" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Interpreting%20Data%20Using%20Descriptive%20Statistics%20with%20R&amp;body=https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/&amp;title=Interpreting%20Data%20Using%20Descriptive%20Statistics%20with%20R" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Interpreting%20Data%20Using%20Descriptive%20Statistics%20with%20R%20https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://hossainlab.github.io/2022/07/28/interpreting-data-using-descriptive-statistics-with-r/&amp;title=Interpreting%20Data%20Using%20Descriptive%20Statistics%20with%20R" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="portrait mr-3" src="/authors/jubayer/avatar_hu28da3dc069864d1a7f0332f40cc35726_137027_250x250_fill_q100_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://hossainlab.github.io/">Jubayer Hossain</a></h5>
+      <h6 class="card-subtitle">Founder &amp; Management Lead</h6>
+      <p class="card-text">I am Jubayer, recent alumni with Bachelor and Master’s in Microbiology. I am the founder of CHIRAL Bangladesh, a non-profit organization dedicated to health research to improve lives in Bangladesh. I aspire to maximize the quality of life of the human around me by working at the intersection of education, technology, and health research.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.twitter.com/JHossain28/" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/jubayer28/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/hossainlab" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://kaggle.com/jhossain" target="_blank" rel="noopener">
+        <i class="fab fa-kaggle"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://orcid.org/my-orcid?orcid=0000-0001-9323-4997" target="_blank" rel="noopener">
+        <i class="ai ai-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/static/CV/CV_Jubayer_Hossain.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2022 Jubayer Hossain &middot; 
+    
+    <a href="https://github.com/malcolmbarrett/malco.io" target="_blank" rel="noopener"><i class="fas fa-code-branch" style="color:#0072B2"></i></a>  &middot; 
+    
+    Made with the <a href="https://cran.r-project.org/" target="_blank" rel="noopener"><i class="fab fa-r-project"></i> </a><a href="https://github.com/rstudio/blogdown" target="_blank" rel="noopener">blogdown</a> package and the 
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

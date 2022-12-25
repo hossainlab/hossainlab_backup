@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jobaida Saba | Jubayer Hossain</title>
+    <link>https://hossainlab.github.io/authors/jobaida-saba/</link>
+      <atom:link href="https://hossainlab.github.io/authors/jobaida-saba/index.xml" rel="self" type="application/rss+xml" />
+    <description>Jobaida Saba</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Jubayer Hossain</copyright><lastBuildDate>Wed, 25 May 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://hossainlab.github.io/img/headers/canyon.jpg</url>
+      <title>Jobaida Saba</title>
+      <link>https://hossainlab.github.io/authors/jobaida-saba/</link>
+    </image>
+    
+    <item>
+      <title>Interventions to Improve the Mental Health among Intimate Partner Violence Survivors in Low and Middle-income countries: A Systematic Review Protocol</title>
+      <link>https://hossainlab.github.io/publication/ipv-survivors-systematic-review-2022/</link>
+      <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://hossainlab.github.io/publication/ipv-survivors-systematic-review-2022/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

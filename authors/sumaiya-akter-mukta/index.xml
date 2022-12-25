@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sumaiya Akter Mukta | Jubayer Hossain</title>
+    <link>https://hossainlab.github.io/authors/sumaiya-akter-mukta/</link>
+      <atom:link href="https://hossainlab.github.io/authors/sumaiya-akter-mukta/index.xml" rel="self" type="application/rss+xml" />
+    <description>Sumaiya Akter Mukta</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Jubayer Hossain</copyright><lastBuildDate>Thu, 19 Aug 2021 12:21:13 +0600</lastBuildDate>
+    <image>
+      <url>https://hossainlab.github.io/img/headers/canyon.jpg</url>
+      <title>Sumaiya Akter Mukta</title>
+      <link>https://hossainlab.github.io/authors/sumaiya-akter-mukta/</link>
+    </image>
+    
+    <item>
+      <title>Quality of Life among Bangladeshi Patients with Thalassemia using the SF-36 Questionnaire</title>
+      <link>https://hossainlab.github.io/publication/quality-of-life-of-thalassemia-patients/</link>
+      <pubDate>Thu, 19 Aug 2021 12:21:13 +0600</pubDate>
+      <guid>https://hossainlab.github.io/publication/quality-of-life-of-thalassemia-patients/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Knowledge and Attitudes of Thalassemia among Public University Students in Bangladesh</title>
+      <link>https://hossainlab.github.io/publication/knowledge-and-attitude-of-thalassemia/</link>
+      <pubDate>Thu, 19 Aug 2021 12:17:26 +0600</pubDate>
+      <guid>https://hossainlab.github.io/publication/knowledge-and-attitude-of-thalassemia/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

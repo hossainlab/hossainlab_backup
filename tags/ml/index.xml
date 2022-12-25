@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ML | Jubayer Hossain</title>
+    <link>https://hossainlab.github.io/tags/ml/</link>
+      <atom:link href="https://hossainlab.github.io/tags/ml/index.xml" rel="self" type="application/rss+xml" />
+    <description>ML</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Jubayer Hossain</copyright><lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://hossainlab.github.io/img/headers/canyon.jpg</url>
+      <title>ML</title>
+      <link>https://hossainlab.github.io/tags/ml/</link>
+    </image>
+    
+    <item>
+      <title>Heart Disease Analysis and Prediction Using Machine Learning</title>
+      <link>https://hossainlab.github.io/project/heart-disease-analysis-and-prediction-using-machine-learning/</link>
+      <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://hossainlab.github.io/project/heart-disease-analysis-and-prediction-using-machine-learning/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Heart disease describes a range of conditions that affect your heart. Diseases under the heart disease umbrella include blood vessel diseases, such as coronary artery disease; heart rhythm problems (arrhythmia); and heart defects you’re born with (congenital heart defects), among others.
+The term “heart disease” is often used interchangeably with the term “cardiovascular disease.”Cardiovascular disease refers to conditions characterized by narrowed or blocked blood vessels, which can result in a heart attack, chest pain (angina), or stroke. Other heart conditions, such as those affecting your heart’s muscle, valves, or rhythm, are also classified as heart disease. any types of heart disease can be avoided or treated by adopting a healthy lifestyle.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Source:&lt;a href=&#34;https://www.cdc.gov/heartdisease/about.htm&#34; class=&#34;uri&#34;&gt;https://www.cdc.gov/heartdisease/about.htm&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;symptoms&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Symptoms&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Chest pain, chest tightness, chest pressure and chest discomfort (angina)&lt;/li&gt;
+&lt;li&gt;Shortness of breath&lt;/li&gt;
+&lt;li&gt;Pain, numbness, weakness or coldness in your legs or arms if the blood vessels in those parts of your body are narrowed&lt;/li&gt;
+&lt;li&gt;Pain in the neck, jaw, throat, upper abdomen or back&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Source:&lt;/em&gt; &lt;a href=&#34;https://www.cdc.gov/heartdisease/risk_factors.htm&#34; class=&#34;uri&#34;&gt;https://www.cdc.gov/heartdisease/risk_factors.htm&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;objectives&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Objective(s)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;With the dataset provided for heart analysis, we have to analyse the possibilities of heart attack on the basis of various features, and then the prediction from the analysis will tell us that whether an individual is prone to heart attack or not.&lt;/li&gt;
+&lt;li&gt;The detailed analysis can proceed with the exploratory data analysis (EDA).&lt;/li&gt;
+&lt;li&gt;The classification for predication can be done using various machine learning model algorithms, choose the best suited model for heart attack analysis and finally save the model in the pickle (.pkl) file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;research-questions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Research Question(s)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Does the age of a person contribute towards heart attack?&lt;/li&gt;
+&lt;li&gt;Are different types of chest pain related to each other or the possibility of getting a heart attack?&lt;/li&gt;
+&lt;li&gt;Does high blood pressure increase the risk of heart attack?&lt;/li&gt;
+&lt;li&gt;Does the cholesterol level eventually contribute as a risk factor towards heart attack?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;dataset-information&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Dataset Information&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Age : Age of the patient&lt;/li&gt;
+&lt;li&gt;Sex : Sex of the patient&lt;/li&gt;
+&lt;li&gt;exang: exercise induced angina (1 = yes; 0 = no)&lt;/li&gt;
+&lt;li&gt;ca: number of major vessels (0-3)&lt;/li&gt;
+&lt;li&gt;cp : Chest Pain type
+&lt;ul&gt;
+&lt;li&gt;Value 1: typical angina&lt;/li&gt;
+&lt;li&gt;Value 2: atypical angina&lt;/li&gt;
+&lt;li&gt;Value 3: non-anginal pain&lt;/li&gt;
+&lt;li&gt;Value 4: asymptomatic&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;trtbps : resting blood pressure (in mm Hg)&lt;/li&gt;
+&lt;li&gt;chol : cholestoral in mg/dl fetched via BMI sensor&lt;/li&gt;
+&lt;li&gt;fbs : (fasting blood sugar &amp;gt; 120 mg/dl) (1 = true; 0 = false)&lt;/li&gt;
+&lt;li&gt;rest_ecg : resting electrocardiographic results
+&lt;ul&gt;
+&lt;li&gt;Value 0: normal&lt;/li&gt;
+&lt;li&gt;Value 1: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of &amp;gt; 0.05 mV)&lt;/li&gt;
+&lt;li&gt;Value 2: showing probable or definite left ventricular hypertrophy by Estes’ criteria&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;thalach : maximum heart rate achieved&lt;/li&gt;
+&lt;li&gt;target :
+&lt;ul&gt;
+&lt;li&gt;0 = less chance of heart attack&lt;/li&gt;
+&lt;li&gt;1 = more chance of heart attack&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Data Source:&lt;/em&gt; &lt;a href=&#34;https://www.kaggle.com/rashikrahmanpritom/heart-attack-analysis-prediction-dataset&#34; class=&#34;uri&#34;&gt;https://www.kaggle.com/rashikrahmanpritom/heart-attack-analysis-prediction-dataset&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-analysis-workflow&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Data Analysis Workflow&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Data Collection&lt;/li&gt;
+&lt;li&gt;Importing Data&lt;/li&gt;
+&lt;li&gt;Data Cleaning
+&lt;ul&gt;
+&lt;li&gt;Handling Missing Data&lt;/li&gt;
+&lt;li&gt;Outlier Detection and Removal&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Exploring Data using Descriptive Statistics
+&lt;ul&gt;
+&lt;li&gt;Understanding Data using
+&lt;ul&gt;
+&lt;li&gt;Univariate Analysis&lt;/li&gt;
+&lt;li&gt;Bivariate Analysis&lt;/li&gt;
+&lt;li&gt;Multivariate Analysis&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Understanding Data using Visualizations
+&lt;ul&gt;
+&lt;li&gt;Univariate
+&lt;ul&gt;
+&lt;li&gt;Histograms&lt;/li&gt;
+&lt;li&gt;Density Plot&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Bivariate
+&lt;ul&gt;
+&lt;li&gt;Scatter Plot&lt;/li&gt;
+&lt;li&gt;Boxplot&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Multivariate
+&lt;ul&gt;
+&lt;li&gt;Correlation Matrix&lt;/li&gt;
+&lt;li&gt;Covariance Matrix&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Decision Making using Inferential Statistics
+&lt;ul&gt;
+&lt;li&gt;Hypothesis Testing(T-Test, Z-Test, Chi-square, ANOVA)&lt;/li&gt;
+&lt;li&gt;Creating Predicting Models&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
