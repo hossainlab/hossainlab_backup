@@ -5,12 +5,36 @@
     <link>https://hossainlab.github.io/categories/</link>
       <atom:link href="https://hossainlab.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Jubayer Hossain</copyright><lastBuildDate>Mon, 08 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Jubayer Hossain</copyright><lastBuildDate>Mon, 26 Dec 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://hossainlab.github.io/img/headers/canyon.jpg</url>
       <title>Categories</title>
       <link>https://hossainlab.github.io/categories/</link>
     </image>
+    
+    <item>
+      <title>Dashboard</title>
+      <link>https://hossainlab.github.io/categories/dashboard/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://hossainlab.github.io/categories/dashboard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Analysis</title>
+      <link>https://hossainlab.github.io/categories/data-analysis/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://hossainlab.github.io/categories/data-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Visualization</title>
+      <link>https://hossainlab.github.io/categories/data-visualization/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://hossainlab.github.io/categories/data-visualization/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Talks</title>
@@ -65,14 +89,6 @@
       <link>https://hossainlab.github.io/categories/genomics/</link>
       <pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate>
       <guid>https://hossainlab.github.io/categories/genomics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data Analysis</title>
-      <link>https://hossainlab.github.io/categories/data-analysis/</link>
-      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://hossainlab.github.io/categories/data-analysis/</guid>
       <description></description>
     </item>
     
