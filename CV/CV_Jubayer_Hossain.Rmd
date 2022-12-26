@@ -1,0 +1,146 @@
+---
+#name: Md. Jubayer
+surname: Md. Jubayer Hossain
+position: "Founder, Management Lead & Data Analyst"
+#aboutme: Health Data Science, GIS and Remote Sesning, and Bioinformatics 
+address: "Center for Health Innovation, Research, Action, and Learning (CHIRAL), Bangladesh "
+#address: "Dhaka, Bangladesh"
+#phone: +1 617 432 7004
+#phone: +1 617 945 4383
+email: "contact.jubayerhossain@gmail.com"
+www: www.jhossain.com
+github: hossainlab
+linkedin: hossainmj
+headcolor: 414141
+date: "`r format(Sys.time(), '%B %Y')`"
+output: 
+  vitae::awesomecv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tidyr)
+library(dplyr)
+library(readr)
+library(glue)
+library(tibble)
+library(lubridate)
+library(here)
+library(scales)
+```
+
+
+# Research Experiences
+**<span style="font-size:1em;">Center for Health Innovation, Research, Action, and Learning - Bangladesh</span>** \hfill _Dhaka, Bangladesh_  
+Founder, Management Lead & Data Analyst \hfill _June 2020 - Present_  
+
+I am currently the founder and management lead of CHIRAL Bangladesh, where I lead a team of undergraduates from different background and interns to address challenges in public health and healthcare data science, both in-house and external collaborations. Some of the function associated with the role include: 
+
+- Development and implementation of research strategy for the team, focusing on enabling data science in health research
+- Managing and mentoring staff, undergraduate students, and interns
+- Writing and managing grant applications with Dr. Syeda Tasneem Towhid and Dr. Abul Kalam Azad
+- Designing hands-on training on data analysis and fundamentals of health research for the undergraduate students and interns
+- Responsible for the implementation of diverse tools for analysis of high throughput and public health data
+
+**<span style="font-size:1em;">International Centre for Diarrhoeal Disease Research, Bangladesh</span>** \hfill _Dhaka, Bangladesh_  
+Research Intern, Health Systems and Population Studies Division \hfill _February 2022 - June 2022_ 
+
+I was a research intern of the Health Systems and Population Studies Division at International Centre for Diarrhoeal Disease Research, Bangladesh, focusing on mental health. Some efforts included: 
+
+- Performed literature review of multiple mental health related projects 
+- Responsible for the implementation of diverse tools for data analysis (SPSS, R Programming)
+- Developed keywords and biomedical database search strategy for systematic reviews  
+
+
+ 
+**<span style="font-size:1em;">Bio-Bio-1:: Bioinformatics Research Discussion Group</span>** \hfill _Dhaka, Bangladesh_  
+Team Member, Bioinformatics Group \hfill _February 2017 - June 2019_ 
+
+I was a team member of Bio-Bio-1 providing  support across different bioinformatics training programs at the organization. Some of the functions of the role included:
+
+- Pursued learning opportunities to advance knowledge and take on leadership position
+- Contributed to team design training modules and connect preparation
+
+
+# Academic Credentials 
+**<span style="font-size:1em;">Jagannath University</span>** \hfill _Dhaka, Bangladesh_  
+Master of Science in Microbiology\hfill _January 2019  - January 2020_
+
+**<span style="font-size:1em;">Jagannath University</span>** \hfill _Dhaka, Bangladesh_  
+Bachelor of Science in Microbiology\hfill _January 2016 - January 2019_
+
+
+# Publications
+1. Towhid, S. T., **Hossain, M. J.**, Sammo, M. A. S., & Akter, S. (2022). Perception of Students on Antibiotic Resistance and Prevention: An Online, Community-Based Case Study from Dhaka, Bangladesh. European Journal of Biology and Biotechnology, 3(3), 14–19. https://doi.org/10.24018/ejbio.2022.3.3.341
+
+1. **Hossain, Md. J.**, Towhid, S. T., Sultana, S., Mukta, S. A., Gulshan, R., & Miah, S. (2022). Knowledge and attitudes towards thalassemia among university students in Bangladesh. medRxiv. https://doi.org/10.1101/2022.09.19.22280125 
+
+2. **Hossain, Md. J.**, Towhid, S. T., Akter, S., Shahjahan, M., Roy, T., Akter, B., & Nodee, T. A. (2022). Self‑management of diabetic patients from the urban areas in Bangladesh. medRxiv. https://doi.org/10.1101/2022.08.23.22279128
+
+# Working Papers 
+1. **Hossain, Md. J.**, Md Wahidul Islam, Rukaiya Ummi Moon, Rubaiya Gulshan, Sumaiya Akter Mukta, Mousumi Karmakar, Sabia Sultana,Md. Sharif Miah, Md. Ariful Islam (2021). Quality of Life among Bangladeshi Patients with Thalassemia using the SF-36 Questionnaire.
+
+2. **Hossain, Md. J.**, Abul Kalam Azad, Md. Wahidul Islam, Muhibullah Shahjahan (2022). Factors influencing knowledge of antibiotic usage among patients of school-going children. 
+
+3. **Hossain, Md. J.**, Abul Kalam Azad, Md. Atik Shahriar Sammo (2022). A KAP Study on the Impact of C-section on Infant Gut Microbiota among Public University Students in Bangladesh
+
+4. **Hossain, Md. J.**, Towhid, S. T.,Abul Kalam Azad, Manisha Das, Wahidul Islam, Muhibullah Shahjahan (2022). The role of community participation and social engagement in the prevention and control of dengue fever in Dhaka City. 
+
+# Conference 
+1. Abul Kalam Azad, Jannatul Ferdous, Syeda Tasneem Towhid, Md. Shahadat Bin Shahid, Md. Jubayer Hossain (2022).Isolation and Antibiotic Susceptibility Pattern of Bacteria from Patients with Urinary Tract Infections. *36th BSM Annual Conference* 
+2. Md Wahidul Islama, Abul Kalam Azada, Muhibullah Shahjahana, and Md. Jubayer Hossaina* (2022).Factors influencing the misuse of antibiotics among parents attending school in Dhaka City in Bangladesh. *36th BSM Annual Conference*
+3. Manisha Das, Abul Kalam Azad, Ashok Kumar Barman, Nafisa Anjum Holy, Narges Akter, Md. Jubayer Hossain (2022). Experiences and Side Effects Following COVID-19 Vaccination in Bangladesh: a cross-sectional community-based e-survey. *36th BSM Annual Conference* 
+
+
+# Skills 
+- **Programming Languages:** SQL, Python, R, Julia, JavaScript
+- **Big Data Frameworks:** Dask, PySpark
+- **Bioinformatics:** NGS, RNASeq, ssRNASeq
+- **Analytics Softwares:** SPSS, PowerBI, Microsoft Excel
+- **Survey Tools:** RedCap, KoboToolBox, Google Forms
+- **Miscellaneous Skills:** UNIX, Version Control(Git), Web Scraping, APIs, Visualizations
+
+
+# Projects 
+**<span style="font-size:1em;">Bioinformatics Approach for Profiling Antibiotic Resistance genes from Metagenomic DNA Sequence</span>** \hfill _\href{https://github.com/hossainlab/ARGs}{\faGithub}_ 
+ 
+- **Aims:** To Profiling and predicting of antimicrobial-resistant  genes from  metagenomic DNA sequences
+- **Technical Skills:** QIME2, DADA2, Bash 
+
+**<span style="font-size:1em;">Heart Disease Analysis and Prediction Using Machine Learning</span>** \hfill _\href{https://github.com/hossainlab/Heart-Study}{\faGithub}_ 
+ 
+- **Aims:** With the dataset provided for heart analysis, we have to analyse the possibilities of heart attack on the basis of various features, and then the prediction from the analysis will tell us that whether an individual is prone to heart attack or not
+- **Technical Skills:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn 
+
+
+
+
+# Teaching 
+**<span style="font-size:1em;">Jagannath University, Dhaka</span>** \hfill _\href{https://jnu.ac.bd/dept/portal/web/microbiology}{Website}_   
+Teaching Assistant, Department of Microbiology \hfill _October 2022 - Present_ 
+
+Assisted Dr. Abul Kalam Azad, created course materials on undergrad level public health and hygiene
+
+**<span style="font-size:1em;">Undergraduate Research Training Program (URTP)</span>** \hfill _\href{https://github.com/chiraleducation/URTP}{Course Website}_     
+Lead Organizer & Instructor \hfill _January 2022 - Present_ 
+
+The Undergraduate Research Training Program (URTP) aims to develop better-prepared undergraduate researchers
+
+**<span style="font-size:1em;">Health Research ToolBox: A Step by Step Guide for Beginners (Cohort 2) </span>** \hfill _\href{https://github.com/chiraleducation/HRT}{Course Website}_  
+Lead Organizer & Instructor \hfill _June 2021 - Present_ 
+
+This course will give students a foundation in research principles and practice, mainly applied to public health
+
+
+
+# References
+
+<span style="font-size:1em;">Syeda Tasneem Towhid, Ph.D.</span> \hfill towidst@mib.jnu.ac.bd  
+Assistant Professor, Department of Microbiology, Jagannath University, Dhaka \hfill +8801746208281
+
+<span style="font-size:1em;">Abul Kalam Azad, Ph.D.</span> \hfill akazad88@mib.jnu.ac.bd  
+Associate Professor, Department of Microbiology, Jagannath University, Dhaka \hfill +8801732788272
+
+
+
