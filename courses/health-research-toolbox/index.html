@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.5.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Jubayer Hossain">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="This course will give students a foundation in research principles and practice, mainly applied to public health. In addition, we will have weekly lectures covering various topics, including research methodology, data collection methods, statistics, R programming, data visualization(human perception, color theory, principles of visual design), etc.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://hossainlab.github.io/courses/health-research-toolbox/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#0072B2">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/darcula.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/darcula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:300,400,500%7CIBM+Plex+Sans:300,400,500%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.a72388dfabd81eb134f18afd5be0ccc8.css">
+
+  
+    
+    
+    
+    
+      
+    
+    
+    
+    <link rel="stylesheet" href="/css/academic.cec0707b3854b847b32f81a880c11d1e.css">
+  
+
+  
+
+
+
+
+  
+
+
+  
+  <link rel="alternate" href="/courses/health-research-toolbox/index.xml" type="application/rss+xml" title="Jubayer Hossain">
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://hossainlab.github.io/courses/health-research-toolbox/">
+
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@Jhossain_28">
+  <meta property="twitter:creator" content="@Jhossain_28">
+  
+  <meta property="og:site_name" content="Jubayer Hossain">
+  <meta property="og:url" content="https://hossainlab.github.io/courses/health-research-toolbox/">
+  <meta property="og:title" content="Health Research ToolBox - A Step by Step Guide for Beginners | Jubayer Hossain">
+  <meta property="og:description" content="This course will give students a foundation in research principles and practice, mainly applied to public health. In addition, we will have weekly lectures covering various topics, including research methodology, data collection methods, statistics, R programming, data visualization(human perception, color theory, principles of visual design), etc."><meta property="og:image" content="https://hossainlab.github.io/img/headers/canyon.jpg">
+  <meta property="twitter:image" content="https://hossainlab.github.io/img/headers/canyon.jpg"><meta property="og:locale" content="en-us">
+  
+    <meta property="og:updated_time" content="2018-09-09T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Health Research ToolBox - A Step by Step Guide for Beginners | Jubayer Hossain</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="Jubayer Hossain"></a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/aboutme"><span>About me</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/publication"><span>Publication</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/talk"><span>Talks</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/training"><span>Training</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/consulting"><span>Consulting</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+  
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
+  
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="/courses/health-research-toolbox/">Course Overview</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/health-research-toolbox/websites/">Resources</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/courses/health-research-toolbox/websites/">Useful websites</a>
+      </li>
+      
+      <li >
+        <a href="/courses/health-research-toolbox/readings/">Useful readings</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#course-description">Course Description</a></li>
+    <li><a href="#course-objectives">Course Objectives</a></li>
+    <li><a href="#benifits-and-rewards">Benifits and Rewards</a></li>
+    <li><a href="#who-this-course-is-for">Who this course is for</a></li>
+    <li><a href="#required-textbooks">Required Textbooks</a></li>
+    <li><a href="#course-policies">Course Policies</a>
+      <ul>
+        <li><a href="#news-and-announcements">News and Announcements</a></li>
+        <li><a href="#discord-server-policy">Discord Server Policy</a></li>
+        <li><a href="#course-prerequisites">Course Prerequisites</a></li>
+        <li><a href="#assignment-policy">Assignment Policy</a></li>
+        <li><a href="#attendance-policy">Attendance Policy</a></li>
+        <li><a href="#make-up-assignment-policy">Make-Up Assignment Policy</a></li>
+        <li><a href="#academic-dishonesty-policy">Academic Dishonesty Policy</a></li>
+        <li><a href="#additional-learning-needs">Additional Learning Needs</a></li>
+      </ul>
+    </li>
+    <li><a href="#qa">Q&A</a></li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          <h1>Health Research ToolBox - A Step by Step Guide for Beginners</h1>
+
+          <div class="article-style">
+            <h2 id="course-description">Course Description</h2>
+<p>This course will give students a foundation in research principles and practice, mainly applied to public health. In addition, we will have weekly lectures covering various topics, including research methodology, data collection methods, statistics, R programming, data visualization(human perception, color theory, principles of visual design), etc.</p>
+<p>We will also have weekly hands-on laboratory sessions in which students will have the opportunity to put the lecture material into practice</p>
+<h2 id="course-objectives">Course Objectives</h2>
+<ul>
+<li>Provides fundamentals of research methodology concepts.</li>
+<li>Understanding of the basic data collection principles.</li>
+<li>Literature database search, literature review and documentation.</li>
+<li>Research proposal writing and ethical approval process.</li>
+<li>Use of data collection tools and data management strategies.</li>
+<li>Statistics: the language of research.</li>
+<li>Provides a solid understanding of data analysis workflow in the field of health sciences.</li>
+<li>Understanding of the basic programming concept using R programming in the health research perspective.</li>
+<li>Understanding of the essential health data analysis workflow.</li>
+<li>Data management with dplyr(A R package for data management)</li>
+<li>Data visualization with ggplot2(A R package for data visualization)</li>
+<li>Understanding and interpreting data using descriptive statistics with R</li>
+<li>Understanding and interpreting data using inferential statistics with R</li>
+<li>Building and evaluating regressing model using R</li>
+<li>Building and evaluating classification model using R</li>
+</ul>
+<h2 id="benifits-and-rewards">Benifits and Rewards</h2>
+<ul>
+<li>Solid understanding of basic health research methodology</li>
+<li>Based on the performance students will be given Research Assistantship(RA) oppurtunities to conduct research with CHIRAL Bangladesh research team in active projects.</li>
+<li>Recommendations</li>
+<li>Completion Certificate</li>
+</ul>
+<h2 id="who-this-course-is-for">Who this course is for</h2>
+<ul>
+<li>If you have no research experience but want to learn the necessary concepts in health research- then this is the right place for you to begin with.</li>
+<li>If you have no data analysis experience but want learn end-to-end data analysis process from data collection to report writing- then this course is a great one to start.</li>
+<li>If you have some experience but are not confident enough to start your project, you can start from here.</li>
+<li>If you are an undergrad student and planning to start your research journey, this course will surely also help you.</li>
+</ul>
+<h2 id="required-textbooks">Required Textbooks</h2>
+<p>The following books purchased and are avilable at the online book store. We have also a placed a copy of each on reserve at our online library.</p>
+<ul>
+<li><a href="#">Basic Epidemiology by WHO</a></li>
+<li><a href="#">Fundamentalsof Biostatistics by Bernard Rosner</a></li>
+<li><a href="#">Applied Medical Statistics for Beginners by Dr. Mohamed Elsherif</a></li>
+<li><a href="#">Introduction to R Programming by Dr. Roger D. Peng</a></li>
+</ul>
+<h2 id="course-policies">Course Policies</h2>
+<p>Please use the information below as reference for how this class will be conducted. We would ask that you review this information before contacting us with any questions.</p>
+<h3 id="news-and-announcements">News and Announcements</h3>
+<p>As much as possible we use the <a href="https://discord.io/chiral-community">Discord</a> for new announcements.
+Discord is a chatroom for discussion. The participants can interact with mentors, share their problems and solutions easily.</p>
+<h3 id="discord-server-policy">Discord Server Policy</h3>
+<p>We welcome messages from participants regarding class policies, assignments and readings. In general We will response to all messages within 24 hours; however it may take us longer to do son the weekends. We are open to taking questions about the readings and class information via discord server.</p>
+<p>We have a small but strict set of rules on our server. Please read over them and take them on board. If you don't understand a rule or need to report an incident, please send a direct message to management team.</p>
+<ul>
+<li><strong>Rule 1:</strong> Respect management team members and listen to their instructions.</li>
+<li><strong>Rule 2:</strong> Use English to the best of your ability. Be polite if someone speaks or writes English imperfectly.</li>
+<li><strong>Rule 3:</strong> Do not provide or request help on projects that may break laws, breach terms of services, or are malicious or inappropriate.</li>
+<li><strong>Rule 4:</strong> Do not post unapproved advertising.</li>
+<li><strong>Rule 5:</strong> Keep discussions relevant to the channel topic. Each channel's description tells you the topic.</li>
+</ul>
+<p>You have to follow these nickname policies to keep safe and clean environment for the members.</p>
+<ul>
+<li><strong>Rule 1:</strong> No blank or &ldquo;invisible&rdquo; names</li>
+<li><strong>Rule 2:</strong> No slurs or other offensive sentiments</li>
+<li><strong>Rule 3:</strong> No noisy unicode characters - for example, z̯̯͡a̧͎̺l̡͓̫g̹̲o̡̼̘ or byte order marks</li>
+<li><strong>Rule 4:</strong> No nicknames designed to annoy other users</li>
+</ul>
+<h3 id="course-prerequisites">Course Prerequisites</h3>
+<p>There are no prerequisites, and we do not assume any prior background in research, data analysis, or statistics.</p>
+<h3 id="assignment-policy">Assignment Policy</h3>
+<ul>
+<li>20% of your grade will be determinded by an assignment during normal class hours.</li>
+<li>40% of your grade will come from a 5-10 page report that explores in further detail one of the research areas in the class syllabus. We expect that students will use orginal data collection, whether quantitative or qualitative analysis, to answer the questions posed.</li>
+<li>20% of your grade will be determinded by your attendance and participation in class.</li>
+<li>20% of your grade will come from 2 page research proposal writing that you must complete on two separate weeks of the class.</li>
+</ul>
+<h3 id="attendance-policy">Attendance Policy</h3>
+<p>Your attendance and participation grade is divided into two parts: 10% comes from your presence in class, and 10% from your participation during discussion. We will allow you to miss three classes during the program for any reason: you do not need to inform us ahead of time unless you are missing for an approved reason(i.e., university activity, sickness) and would like the absence to be expected.</p>
+<h3 id="make-up-assignment-policy">Make-Up Assignment Policy</h3>
+<p>If an event outside of your control causes you to miss an assignment, please email our management team as soons as possible so alternative arrangements can be made. Please note that as rule we do not reschedule assignments for the participants vacations.</p>
+<h3 id="academic-dishonesty-policy">Academic Dishonesty Policy</h3>
+<p>If we determine that you have willfully palagiarized an assignment, you will receive an automatic zero on the assignment and you may fail the class and you can not join us as a team member.</p>
+<h3 id="additional-learning-needs">Additional Learning Needs</h3>
+<p>Each of us has a different learning style, and We will do our best to accomodate diverse learning needs in the class. If you need any kind of accomodation, please come and talk to us as soon as you can so we can arrange a style of learning that works for you.</p>
+<h3 style="color:red;">
+News and Announcements
+</h3>
+<ul>
+<li>As much as possible we use the <a href="https://piazza.com/class/kgp8llbdmx84s9">Piazza course site</a> for new announcements.</li>
+<li><a href="https://slack.com/">Discord</a> is a chatroom for discussion. The participants can interact with mentors, share their problems and solutions easily.</li>
+</ul>
+<h2 id="qa">Q&amp;A</h2>
+<p>Q&amp;A for each lesson can  be accessed at the <a href="https://piazza.com/class/kgp8llbdmx84s9">Piazza course site</a>.</p>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on Sep 9, 2018</p>
+
+          
+
+<p class="edit-page">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/courses%5cHealth-Research-ToolBox%5c_index.md">
+    <i class="fas fa-pen pr-2"></i>Edit this page
+  </a>
+</p>
+
+
+
+
+          
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2022 Jubayer Hossain &middot; 
+    
+    <a href="https://github.com/malcolmbarrett/malco.io" target="_blank" rel="noopener"><i class="fas fa-code-branch" style="color:#0072B2"></i></a>  &middot; 
+    
+    Made with the <a href="https://cran.r-project.org/" target="_blank" rel="noopener"><i class="fab fa-r-project"></i> </a><a href="https://github.com/rstudio/blogdown" target="_blank" rel="noopener">blogdown</a> package and the 
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
