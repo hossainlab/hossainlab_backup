@@ -132,5 +132,21 @@ The term “heart disease” is often used interchangeably with the term “card
 </description>
     </item>
     
+    <item>
+      <title>Hepatitis Mortality Prediction Using Machine Learning</title>
+      <link>https://hossainlab.github.io/project/hepatitis-mortality/</link>
+      <pubDate>Thu, 29 Apr 2021 02:38:57 +0600</pubDate>
+      <guid>https://hossainlab.github.io/project/hepatitis-mortality/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CHIRAL Disease Detection System (CHIRAL-DDS)</title>
+      <link>https://hossainlab.github.io/project/dds/</link>
+      <pubDate>Thu, 18 Mar 2021 22:54:26 +0600</pubDate>
+      <guid>https://hossainlab.github.io/project/dds/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Asif Shahriar | Jubayer Hossain</title>
+    <link>https://hossainlab.github.io/authors/asif-shahriar/</link>
+      <atom:link href="https://hossainlab.github.io/authors/asif-shahriar/index.xml" rel="self" type="application/rss+xml" />
+    <description>Asif Shahriar</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2023 Jubayer Hossain</copyright><lastBuildDate>Thu, 18 Mar 2021 22:41:58 +0600</lastBuildDate>
+    <image>
+      <url>https://hossainlab.github.io/img/headers/canyon.jpg</url>
+      <title>Asif Shahriar</title>
+      <link>https://hossainlab.github.io/authors/asif-shahriar/</link>
+    </image>
+    
+    <item>
+      <title>Soaking Temperature</title>
+      <link>https://hossainlab.github.io/project/soaking-temperature/</link>
+      <pubDate>Thu, 18 Mar 2021 22:41:58 +0600</pubDate>
+      <guid>https://hossainlab.github.io/project/soaking-temperature/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
