@@ -5,12 +5,34 @@
     <link>https://hossainlab.github.io/project/</link>
       <atom:link href="https://hossainlab.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2023 Jubayer Hossain</copyright><lastBuildDate>Mon, 26 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2023 Jubayer Hossain</copyright><lastBuildDate>Mon, 02 Jan 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://hossainlab.github.io/img/headers/canyon.jpg</url>
       <title>Projects</title>
       <link>https://hossainlab.github.io/project/</link>
     </image>
+    
+    <item>
+      <title>Data Professionals Survey Report </title>
+      <link>https://hossainlab.github.io/project/data-professionals-survey-report/</link>
+      <pubDate>Mon, 02 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://hossainlab.github.io/project/data-professionals-survey-report/</guid>
+      <description>
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Health Impact of Distance Learning on High School Students </title>
+      <link>https://hossainlab.github.io/project/health-impact-of-distance-learning-on-high-school-students/</link>
+      <pubDate>Mon, 02 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://hossainlab.github.io/project/health-impact-of-distance-learning-on-high-school-students/</guid>
+      <description>
+
+
+</description>
+    </item>
     
     <item>
       <title>Amazon Top 50 Bestselling Booksd</title>
