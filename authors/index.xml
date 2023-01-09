@@ -5,7 +5,7 @@
     <link>https://hossainlab.github.io/authors/</link>
       <atom:link href="https://hossainlab.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2023 Jubayer Hossain</copyright><lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2023 Jubayer Hossain</copyright><lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://hossainlab.github.io/img/headers/canyon.jpg</url>
       <title>Authors</title>
@@ -15,8 +15,48 @@
     <item>
       <title>Abul Kalam Azad</title>
       <link>https://hossainlab.github.io/authors/abul-kalam-azad/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
       <guid>https://hossainlab.github.io/authors/abul-kalam-azad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ashok Kumar Barman</title>
+      <link>https://hossainlab.github.io/authors/ashok-kumar-barman/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://hossainlab.github.io/authors/ashok-kumar-barman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Manisha Das</title>
+      <link>https://hossainlab.github.io/authors/manisha-das/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://hossainlab.github.io/authors/manisha-das/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Md. Jubayer Hossain</title>
+      <link>https://hossainlab.github.io/authors/md.-jubayer-hossain/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://hossainlab.github.io/authors/md.-jubayer-hossain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nafisa Anjum Holy1</title>
+      <link>https://hossainlab.github.io/authors/nafisa-anjum-holy1/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://hossainlab.github.io/authors/nafisa-anjum-holy1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Narges Akter</title>
+      <link>https://hossainlab.github.io/authors/narges-akter/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://hossainlab.github.io/authors/narges-akter/</guid>
       <description></description>
     </item>
     
@@ -25,14 +65,6 @@
       <link>https://hossainlab.github.io/authors/jannatul-ferdous/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <guid>https://hossainlab.github.io/authors/jannatul-ferdous/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Md. Jubayer Hossain</title>
-      <link>https://hossainlab.github.io/authors/md.-jubayer-hossain/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://hossainlab.github.io/authors/md.-jubayer-hossain/</guid>
       <description></description>
     </item>
     
@@ -153,14 +185,6 @@
       <link>https://hossainlab.github.io/authors/jobaida-saba/</link>
       <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
       <guid>https://hossainlab.github.io/authors/jobaida-saba/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Manisha Das</title>
-      <link>https://hossainlab.github.io/authors/manisha-das/</link>
-      <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://hossainlab.github.io/authors/manisha-das/</guid>
       <description></description>
     </item>
     
@@ -329,14 +353,6 @@
       <link>https://hossainlab.github.io/authors/asif-shahriar/</link>
       <pubDate>Thu, 18 Mar 2021 22:41:58 +0600</pubDate>
       <guid>https://hossainlab.github.io/authors/asif-shahriar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ashok Kumar Barman</title>
-      <link>https://hossainlab.github.io/authors/ashok-kumar-barman/</link>
-      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://hossainlab.github.io/authors/ashok-kumar-barman/</guid>
       <description></description>
     </item>
     

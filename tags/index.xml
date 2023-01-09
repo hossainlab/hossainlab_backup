@@ -5,12 +5,28 @@
     <link>https://hossainlab.github.io/tags/</link>
       <atom:link href="https://hossainlab.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2023 Jubayer Hossain</copyright><lastBuildDate>Mon, 02 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2023 Jubayer Hossain</copyright><lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://hossainlab.github.io/img/headers/canyon.jpg</url>
       <title>Tags</title>
       <link>https://hossainlab.github.io/tags/</link>
     </image>
+    
+    <item>
+      <title>COVID-19</title>
+      <link>https://hossainlab.github.io/tags/covid-19/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://hossainlab.github.io/tags/covid-19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vaccinces</title>
+      <link>https://hossainlab.github.io/tags/vaccinces/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://hossainlab.github.io/tags/vaccinces/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>PowerBI</title>
@@ -89,14 +105,6 @@
       <link>https://hossainlab.github.io/tags/disease-detection/</link>
       <pubDate>Thu, 29 Apr 2021 02:38:57 +0600</pubDate>
       <guid>https://hossainlab.github.io/tags/disease-detection/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>COVID-19</title>
-      <link>https://hossainlab.github.io/tags/covid-19/</link>
-      <pubDate>Fri, 23 Apr 2021 23:24:21 +0600</pubDate>
-      <guid>https://hossainlab.github.io/tags/covid-19/</guid>
       <description></description>
     </item>
     

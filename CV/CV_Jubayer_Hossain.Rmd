@@ -1,14 +1,14 @@
 ---
 #name: Md. Jubayer
 surname: Md. Jubayer Hossain
-position: "Founder, Management Lead & Data Analyst"
+position: "Founder & Data Analyst"
 #aboutme: Health Data Science, GIS and Remote Sesning, and Bioinformatics 
 address: "Center for Health Innovation, Research, Action, and Learning (CHIRAL), Bangladesh "
 #address: "Dhaka, Bangladesh"
 #phone: +1 617 432 7004
 #phone: +1 617 945 4383
 email: "contact.jubayerhossain@gmail.com"
-www: www.jhossain.com
+www: hossainlab.github.io
 github: hossainlab
 linkedin: hossainmj
 headcolor: 414141
@@ -70,13 +70,12 @@ Master of Science in Microbiology\hfill _January 2019  - January 2020_
 **<span style="font-size:1em;">Jagannath University</span>** \hfill _Dhaka, Bangladesh_  
 Bachelor of Science in Microbiology\hfill _January 2016 - January 2019_
 
-
 # Publications
 1. Towhid, S. T., **Hossain, M. J.**, Sammo, M. A. S., & Akter, S. (2022). Perception of Students on Antibiotic Resistance and Prevention: An Online, Community-Based Case Study from Dhaka, Bangladesh. European Journal of Biology and Biotechnology, 3(3), 14–19. https://doi.org/10.24018/ejbio.2022.3.3.341
 
-1. **Hossain, Md. J.**, Towhid, S. T., Sultana, S., Mukta, S. A., Gulshan, R., & Miah, S. (2022). Knowledge and attitudes towards thalassemia among university students in Bangladesh. medRxiv. https://doi.org/10.1101/2022.09.19.22280125 
+1. **Hossain, Md. J.**, Towhid, S. T., Sultana, S., Mukta, S. A., Gulshan, R., & Miah, S. (2022). Knowledge and attitudes towards thalassemia among university students in Bangladesh. medRxiv. https://doi.org/10.1101/2022.09.19.22280125 (Accepted by [Microbial Bioactives](https://publishing.emanresearch.org/Journal/JournalDetails?JournalCode=MB))
 
-2. **Hossain, Md. J.**, Towhid, S. T., Akter, S., Shahjahan, M., Roy, T., Akter, B., & Nodee, T. A. (2022). Self‑management of diabetic patients from the urban areas in Bangladesh. medRxiv. https://doi.org/10.1101/2022.08.23.22279128
+2. **Hossain, Md. J.**, Towhid, S. T., Akter, S., Shahjahan, M., Roy, T., Akter, B., & Nodee, T. A. (2022). Self-Management of Diabetic Patients from the Urban Areas in Bangladesh. medRxiv. https://doi.org/10.1101/2022.08.23.22279128 (Preprint; Submitted to PLOS Global Public Health)
 
 # Working Papers 
 1. **Hossain, Md. J.**, Md Wahidul Islam, Rukaiya Ummi Moon, Rubaiya Gulshan, Sumaiya Akter Mukta, Mousumi Karmakar, Sabia Sultana,Md. Sharif Miah, Md. Ariful Islam (2021). Quality of Life among Bangladeshi Patients with Thalassemia using the SF-36 Questionnaire.
@@ -87,11 +86,10 @@ Bachelor of Science in Microbiology\hfill _January 2016 - January 2019_
 
 4. **Hossain, Md. J.**, Towhid, S. T.,Abul Kalam Azad, Manisha Das, Wahidul Islam, Muhibullah Shahjahan (2022). The role of community participation and social engagement in the prevention and control of dengue fever in Dhaka City. 
 
-# Conference 
-1. Abul Kalam Azad, Jannatul Ferdous, Syeda Tasneem Towhid, Md. Shahadat Bin Shahid, Md. Jubayer Hossain (2022).Isolation and Antibiotic Susceptibility Pattern of Bacteria from Patients with Urinary Tract Infections. *36th BSM Annual Conference* 
-2. Md Wahidul Islama, Abul Kalam Azada, Muhibullah Shahjahana, and Md. Jubayer Hossaina* (2022).Factors influencing the misuse of antibiotics among parents attending school in Dhaka City in Bangladesh. *36th BSM Annual Conference*
-3. Manisha Das, Abul Kalam Azad, Ashok Kumar Barman, Nafisa Anjum Holy, Narges Akter, Md. Jubayer Hossain (2022). Experiences and Side Effects Following COVID-19 Vaccination in Bangladesh: a cross-sectional community-based e-survey. *36th BSM Annual Conference* 
-
+# Conferences 
+1. Abul Kalam Azad, Jannatul Ferdous, Syeda Tasneem Towhid, Md. Shahadat Bin Shahid, **Md. Jubayer Hossain** (2023).Isolation and Antibiotic Susceptibility Pattern of Bacteria from Patients with Urinary Tract Infections. *[36th BSM Annual Conference](https://www.bsm.org.bd/36th-annual-conference/)*
+2. Mesbah UMR Nayeem, Muslima Aktar Mrittika, **Md. Jubayer Hossain**, Abul Kalam Azad, Jannatul Ferdous, Salma Ahmed, Santonu Kumar Sanyal, Syeda Tasneem Towhid (2023). Quantitative Microbial Risk Assessment from Vancomycin-resistant Enterococcus faecalis and Enterococcus faecium from a specific neighbourhood in Dhaka City,Bangladesh. *[36th BSM Annual Conference](https://www.bsm.org.bd/36th-annual-conference/)* 
+3. Sumona Akter, Syeda Tasneem Towhid, Md. Atik Shariar Sammo, **Md. Jubayer Hossain** (2023). Perception of Students on Antibiotic Resistance and Prevention: An Online, Community-Based Case Study from Dhaka, Bangladesh.  *[36th BSM Annual Conference](https://www.bsm.org.bd/36th-annual-conference/)* 
 
 # Skills 
 - **Programming Languages:** SQL, Python, R, Julia, JavaScript
@@ -114,24 +112,21 @@ Bachelor of Science in Microbiology\hfill _January 2016 - January 2019_
 - **Technical Skills:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn 
 
 
-
-
 # Teaching 
 **<span style="font-size:1em;">Jagannath University, Dhaka</span>** \hfill _\href{https://jnu.ac.bd/dept/portal/web/microbiology}{Website}_   
 Teaching Assistant, Department of Microbiology \hfill _October 2022 - Present_ 
 
-Assisted Dr. Abul Kalam Azad, created course materials on undergrad level public health and hygiene
+Assisted Dr. Abul Kalam Azad, created course materials on undergrad level public health and hygiene. 
 
 **<span style="font-size:1em;">Undergraduate Research Training Program (URTP)</span>** \hfill _\href{https://github.com/chiraleducation/URTP}{Course Website}_     
 Lead Organizer & Instructor \hfill _January 2022 - Present_ 
 
-The Undergraduate Research Training Program (URTP) aims to develop better-prepared undergraduate researchers
+The Undergraduate Research Training Program (URTP) aims to develop better-prepared undergraduate researchers. 
 
 **<span style="font-size:1em;">Health Research ToolBox: A Step by Step Guide for Beginners (Cohort 2) </span>** \hfill _\href{https://github.com/chiraleducation/HRT}{Course Website}_  
 Lead Organizer & Instructor \hfill _June 2021 - Present_ 
 
-This course will give students a foundation in research principles and practice, mainly applied to public health
-
+This course will give students a foundation in research principles and practice, mainly applied to public health. 
 
 
 # References
@@ -141,6 +136,3 @@ Assistant Professor, Department of Microbiology, Jagannath University, Dhaka \hf
 
 <span style="font-size:1em;">Abul Kalam Azad, Ph.D.</span> \hfill akazad88@mib.jnu.ac.bd  
 Associate Professor, Department of Microbiology, Jagannath University, Dhaka \hfill +8801732788272
-
-
-
